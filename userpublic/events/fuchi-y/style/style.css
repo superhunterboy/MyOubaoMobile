@@ -1,0 +1,146 @@
+/** hack for reset.css **/
+@charset "utf-8";
+body,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,th,td{margin:0;padding:0;}
+table{border-collapse:collapse;border-spacing:0;}
+fieldset,img{border:none;}
+address,caption,cite,code,dfn,em,th,var{font-style:normal;font-weight:normal;}
+li{list-style:none;}
+caption,th{text-align:left;}
+h1,h2,h3,h4,h5,h6{font-size:100%;}
+h1{font-size:18px;}
+h2{font-size:16px;}
+h3{font-size:14px;}
+q:before,q:after{content:'';}
+abbr,acronym{border:none;font-variant:normal;}
+sup{vertical-align:text-top;}
+sub{vertical-align:text-bottom;}
+input,button,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit;}
+input,button,textarea,select{*font-size:100%;}
+select,input,button,textarea{font:100% Tahoma,Arial,sans-serif;}
+table{font-size:inherit;font:100%;}
+pre,code,kbd,samp,tt{font-family:'Courier New',Courier,monospace;}
+small{font-size:100%;}
+abbr,acronym{border-bottom:1px dotted;cursor:help;}
+ins{text-decoration:none;}
+del{text-decoration:line-through;}
+hr{color:#D1D7DC;background-color:#D1D7DC;border:none;height:1px;}
+html{overflow-y:scroll;height:100%;}
+body{font:12px/1.5 Helvetica,Tahoma,Arial,SimSun,sans-serif;color:#555;height:100%;background-color:#FFF;}
+a{color:#484848;text-decoration:none;}
+a:hover{color:#847B5F;}
+a.disable{color:#999;}
+a.disable:hover{text-decoration:none;cursor:default;}
+.clearfix:after{content:".";display:block;height:0;clear:both;overflow:hidden;}
+.clearfix{*zoom:1;}
+
+/* global-top */
+.global-top{height:70px;background:#222228;}
+.global-top .logo{width:300px;height:70px;background:url("../images/logo.png") 0 0 no-repeat;}
+.global-top .logo:hover{background-position:0 0;}
+.global-top .link{float:right;width:156px;height:70px;background:url("../images/link-index.png") 0 0 no-repeat;margin-left:5px;}
+.global-top .link:hover {background-position:0 -70px;}
+.global-top .linkFastlogin {background-image:url(../images/link-fastlogin.png)}
+
+/* banner */
+.reg-banner{height:377px;background:#BDAF8F url("../images/banner.jpg") no-repeat center 0;}
+
+.part1{position:relative;height:1191px;background:#323245 url("../images/bg-01.png") no-repeat center 0;}
+.part2{height:498px;background:#CECBC2 url("../images/bg-02.png") no-repeat center 60px;}
+.part2 .warper {width:1000px;margin:0 auto;height:688px;position:relative;}
+.part2 .warper .button {position:absolute;left:100px;top:100px;background:url(../images/button-down.png) no-repeat;width:170px;height:35px;left:554px;top:310px;color:#FFF;text-align:center;text-indent:25px;line-height:31px;}
+.part2 .warper .button:hover {background-position:0 -35px;}
+.part2 .warper .button-360 {left:753px;top:310px;}
+.part2 .warper .text {position:absolute;left:554px;top:350px;width:170px;text-align:center;font-size:13px;color:#827E74;}
+.part2 .warper .text-360 {left:753px;}
+.part2 .warper .button-360-2 {top:375px;left:753px;}
+.part2 .warper .button-baidu-2 {top:375px;}
+.part2 .warper .text-360-2 {top:415px;}
+.part2 .warper .text-baidu-2 {top:415px;}
+
+
+.part3{position:relative;height:650px;background:#F5F5F5 url("../images/bg-03.png") no-repeat center 30px;}
+.part3 .slider{top:170px;display:none;}
+.part3 .panel-current{display:block;}
+.part3 .slider-prev{background-image:url("../images/slider-prev2.png")}
+.part3 .slider-next{background-image:url("../images/slider-next2.png")}
+.part4{height:113px;background:#3F4053 url("../images/bg-04.png") no-repeat center 0;}
+.slider{position:relative;width:1030px;margin:0 auto;top:530px;}
+.slider .slider-inner{position:relative;width:930px;margin:0 auto;overflow:hidden;}
+.slider .slider-pic li{width:930px;height:631px;}
+.slider .slider-pic li a {display: block;position: relative;}
+.slider .slider-pic li a .text {
+position: absolute;
+width: 910px;
+left: 0;
+bottom:0;
+background: #000;
+padding: 10px;
+color: #FFF;
+font-size: 14px;
+font-weight: bold;
+text-align: center;
+opacity: .6;
+}
+.slider .slider-pic img{display:block;margin:0 auto;}
+.slider .slider-num{position:absolute;bottom:10px;width:100%;text-align:center;}
+.slider .slider-num li {
+    background: none repeat scroll 0 0 #fefefe;
+    border-radius: 50%;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 0;
+    height: 10px;
+    margin: 0 4px;
+    overflow: hidden;
+    text-indent: -9999px;
+    width: 10px;
+}
+.slider .slider-num li.current {background: none repeat scroll 0 0 #7a7a7a;}
+.slider-prev,.slider-next{position:absolute;top:50%;margin-top:-32px;width:38px;height:65px;}
+.slider-prev{left:0;background:url("../images/slider-prev.png") no-repeat 0 0;}
+.slider-next{right:0;background:url("../images/slider-next.png") no-repeat 0 0;}
+
+
+.slider .slider-pic li.slider-pic1 {width:930px;height:631px;}
+.slider .slider-pic li.slider-pic1 a {display: block;position: relative;}
+.slider .slider-pic li.slider-pic1 a .text {
+position: absolute;
+width: 910px;
+left: 0;
+bottom:0;
+background: #000;
+padding: 10px;
+color: #FFF;
+font-size: 14px;
+font-weight: bold;
+text-align: center;
+opacity: .6;
+}
+
+
+.slider3 {height:430px;}
+
+.tab-title{position:absolute;top:120px;left:50%;margin-left:-88px;width:176px;height:32px;background-color:#FFF;box-shadow:0 1px 2px rgba(0,0,0,0.5);}
+.tab-title a{float:left;width:88px;height:32px;line-height:32px;text-align:center;color:#7A7B92;font-family:microsoft yahei;font-size:14px;}
+.tab-title .current{color:#FFF;background-color:#7A7B92;}
+
+/*footer*/
+.footer{ font-family:microsoft yahei; height:115px;background: none;}
+.footer .g_33 {height:115px;background:url("../images/footer-bg.png") no-repeat;}
+.footer .cell{ float:left; padding-top:20px; width:210px; font-size:14px;}
+.footer .cell-a{ padding-left:25px;}
+.footer .footer-cont{padding-top:20px; float:right; margin-right:40px; text-align:right;}
+
+.footer .footer-cont .foot-link{ color:#cacaca; height:20px; line-height:20px;}
+.footer .footer-cont .copy{height:30px; line-height:30px;}
+.footer .footer-cont .copy font{color:#b8af9b; font-size:12px;}
+.footer .footer-cont .foot-warning { color:#999;}
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,1 @@
+!function(n,e,a){var s,t={name:"ssc",jsNamespace:""},i=n.Games,f={init:function(){var n=this;n.eventProxy()},getGameConfig:function(){return i.SSC.Config}},m=n.Class(f,a);m.defConfig=t,m.getInstance=function(n){return s||(s=new m(n))},n.Games[e]=m}(dsgame,"SSC",dsgame.Game);

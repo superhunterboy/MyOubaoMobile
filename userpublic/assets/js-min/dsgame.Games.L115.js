@@ -1,0 +1,1 @@
+!function(e,n,a){var t,s={name:n,jsNameSpace:"dsgame.Games.L115."},i=e.Games,m={init:function(){var e=this;e.eventProxy()},getGameConfig:function(){return i[n].Config}},f=e.Class(m,a);f.defConfig=s,f.getInstance=function(e){return t||(t=new f(e))},e.Games[n]=f}(dsgame,"L115",dsgame.Game);

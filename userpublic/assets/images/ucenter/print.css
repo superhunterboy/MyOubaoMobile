@@ -1,0 +1,11 @@
+#header{display: none;}
+#nav{display: none;}
+.main-content{width:800px;}
+.nav-bg{box-shadow:none;}
+.row-head .row-desc{display:none;}
+.item-right{display:none;}
+.item-detail .item-center{margin-right: 0}
+.lottery-info{box-shadow: none;}
+#footer{display: none;}
+.hidden-when-printed{display: none;}
+.label{word-wrap:break-word;word-break:keep-all;overflow:hidden;}

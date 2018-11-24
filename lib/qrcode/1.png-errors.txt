@@ -1,0 +1,1 @@
+2016-12-24 22:07:58: imagepng(): Unable to open '/home/abel/newworkspace/dasheng/mobilepublic/qrcode/1.png' for writing: Permission denied2016-12-24 22:08:04: imagepng(): Unable to open '/home/abel/newworkspace/dasheng/mobilepublic/qrcode/1.png' for writing: Permission denied

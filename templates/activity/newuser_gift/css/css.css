@@ -1,0 +1,323 @@
+/* Eric Meyer's Reset CSS v2.0 - http://cssreset.com */
+html,body,div,span,applet,object,iframe,
+h1,h2,h3,h4,h5,h6,p,
+blockquote,pre,a,abbr,acronym,address,
+big,cite,code,del,dfn,em,img,ins,kbd,q,s,
+samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,
+dl,dt,dd,ol,ul,li,
+fieldset,form,label,legend,
+table,caption,tbody,tfoot,thead,tr,th,td,
+article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,
+output,ruby,section,summary,time,mark,audio,video{
+	border:0;
+	font-size:100%;
+	font-family:"Helvetica Neue","Hiragino Sans GB","Microsoft Yahei",sans-serif,arial;
+	vertical-align:baseline;
+	margin:0;
+	padding:0;
+	font-weight: normal;
+}
+article,aside,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section{
+	display:block;
+}
+body{line-height:1}
+ol,ul{list-style:none}
+blockquote,q{quotes:none}
+blockquote:before,blockquote:after,q:before,q:after{content:none}
+table{border-collapse:collapse;border-spacing:0}
+
+.seo-text{
+	text-indent: -9999em;
+	line-height: 0;
+	font-size: 0;
+	height: 0;
+	color: transparent;
+	opacity: 0;
+	filter: alpha(opacity=0);
+}
+
+body{
+	color: #646464;
+	background: #fff url(../images/bg-repeat.png) repeat;
+	font-size: 14px;
+	line-height: 1.5;
+}
+.left{float:left;}
+.right{float:right;}
+.wrap{
+	width:100%;
+	position:relative;
+	clear:both;
+}
+.wrap-inner{
+	width:1000px;
+	height: 100%;
+	margin:0 auto;
+	clear:both;
+	position:relative;
+}
+.wrap-inner:after{
+	content:'';
+	visibility:hidden;
+	display:block;
+	height:0;
+	clear:both;
+}
+.logo{
+	width:170px;
+	height:60px;
+	display:inline;
+	float:left;
+	text-indent:-9999em;
+	background-image:url(../images/logo.png);
+}
+.c-important{
+	color: #ff5a00!important;
+}
+#banner{
+	background: url(../images/bg.jpg) center top no-repeat;
+}
+#banner .wrap-inner{
+	height: 450px;
+}
+.join-btn{
+	width: 170px;
+	height: 70px;
+	background: url(../images/join-btn.png);
+	text-indent: -9999em;
+	position: absolute;
+	left: 314px;
+	top: 273px;
+	transition: all .6s ease-out;
+}
+.join-btn:hover{
+	opacity: 0;
+	filter: alpha(opacity=0);
+}
+
+#content .wrap-inner{
+	padding: 50px 65px;
+	color: #555;
+	font-size: 14px;
+}
+#content h2{
+	color: #2e3135;
+	font-size: 22px;
+	line-height: 24px;
+	height: 24px;
+	padding-left: 10px;
+	border-left: 4px solid #ff5054;
+	margin-bottom: 15px;
+}
+#content .cont-box{
+	margin-bottom: 50px;
+	padding: 0 15px;
+}
+#content p{
+	margin-bottom: 6px;
+}
+
+.flow ul{
+	width: 100%;
+	height: 160px;
+}
+.flow li{
+	width: 240px;
+	float: left;
+	color: #c35c10;
+	height: 100%;
+}
+.flow li strong{
+	display: block;
+	width: 164px;
+	height: 114px;
+	position: relative;
+	text-align: center;
+	line-height: 120px;
+	font-size: 20px;
+	color: #fff;
+	background: url(../images/flow-bg.png) no-repeat;
+	margin-bottom: 10px;
+}
+.flow li strong i{
+	position: absolute;
+	font-size: 40px;
+	color: #ed474a;
+	left: 15px;
+	top: 10px;
+	line-height: 40px;
+	font-weight: 400;
+	font-style: normal;
+}
+.flow li span{
+	color: #555;
+}
+#content .notice{
+	border: 1px solid rgba(255, 149, 151, .3);
+	border: 1px solid #ff9597\9;
+	background-color: rgba(255, 242, 242, .3);
+	background-color: #fff2f2\9;
+	padding: 10px 15px;
+	margin-top: 15px;
+}
+.notice h3{
+	font-size: 20px;
+	color: #2e3135;
+	margin-bottom: 10px;
+}
+.notice ol{
+	list-style: decimal;
+	margin-left: 20px;
+}
+.notice li{
+	margin-bottom: 10px;
+}
+
+#footer{
+	background-color:#32343a;
+	padding:18px 0;
+	color:#aeafb3;
+	margin-top: 20px;
+}
+#footer .logo{
+	position:static;
+	width:290px;
+	height:80px;
+	background-image:url(../images/foot-logo.png);
+	margin:0;
+}
+#footer .ft-cont{
+	line-height:26px;
+	text-align:right;
+	padding-top: 12px;
+}
+#footer .ft-link{
+	display: none;
+}
+
+.dialog{
+	width: 496px;
+	/*height: 316px;*/
+	position: fixed;
+	left: 50%;
+	top: 50%;
+	margin-left: -250px;
+	margin-top: -160px;
+	background: #fff;
+	border: 2px solid #f34d50;
+	color: #333;
+	z-index: 99;
+	font-size: 12px;
+	display: none;
+}
+
+.dialog .close{
+	position: absolute;
+	display: block;
+	top: -5px;
+	right: 5px;
+	width: 30px;
+	cursor: pointer;
+	color: #fff;
+	font-size: 30px;
+	line-height: 42px;
+	text-align: center;
+}
+.dialog .close:hover{
+	color: #b01212;
+}
+
+.dialog-head{
+	line-height: 30px;
+	padding: 6px 0;
+	background: #cd3336 url(../images/dialog-repeat.png) repeat-x;
+}
+.dialog-head h2{
+	font-size: 18px;
+	font-weight: normal;
+	color: #fff;
+	line-height: 30px;
+	text-indent: 10px;
+}
+.dialog-body{
+	padding: 30px 15px;
+	text-align: center;
+	font-size: 14px;
+	color: #3c3c3c;
+}
+.dialog-body .icon-result{
+	width: 60px;
+	height: 60px;
+	margin: 0 auto;
+	background-repeat: no-repeat;
+	background-position: center center;
+	margin-bottom: 15px;
+}
+.icon-result-success{
+	background-image: url(../images/icon-success.png);
+}
+.icon-result-error{
+	background-image: url(../images/icon-error.png);
+}
+#forbidden-result .dialog-body{
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+.dialog-body p{
+	line-height: 30px;
+}
+.dialog-body h3{
+	font-size: 22px;
+	color: #3c3c3c;
+	font-weight: normal;
+	text-align: center;
+}
+
+.dialog-foot{
+	padding: 0 15px 30px;
+	text-align: center;
+}
+.dialog .btn{
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	min-width: 90px;
+	_widht: 90px;
+	padding: 0 15px;
+	line-height: 40px;
+	text-align: center;
+	border-radius: 4px;
+	font-size: 18px;
+	color: #fff;
+	background: #d8001f url(../images/dialog-repeat.png) repeat-x;
+	cursor: pointer;
+	text-decoration: none;
+	margin: 0 auto;
+}
+.dialog .btn-normal{
+	background: #808080 url(../images/dialog-repeat-2.png) repeat-x;
+}
+.dialog .link-btn{
+	color: #ffde00;
+}
+
+.overlay{
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background: #000;
+	opacity: .4;
+	filter: alpha(opacity=40);
+	z-index: 98;
+	display: none;
+}
+/* call center */
+.call-center{position:fixed;right:0;top:50%;margin-top:-60px;z-index:15;}
+.call-center a{display:block;width:60px;height:60px;background-repeat:no-repeat;background-image:url(../images/call-center.png);text-indent:-9999em;cursor:pointer;}
+.call-center .kf53{background-position:0 0;border-radius:3px 0 0 0;}
+.call-center .kf53:hover{background-position:-60px 0;}
+.call-center .qqkf{background-position:0 -60px;border-radius:0 0 0 3px;}
+.call-center .qqkf:hover{background-position:-60px -60px;}

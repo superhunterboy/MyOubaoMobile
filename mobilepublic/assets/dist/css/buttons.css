@@ -1,0 +1,393 @@
+
+
+#menuBtn{
+    float:right;
+    margin-top:60px;
+    margin-right:4%;
+    background:url(../images/public/menu.png)center center no-repeat;
+    background-size:100% 100%;
+    width: 10%;
+    height: 50px;
+}
+#backBtn{
+    background:url(../images/public/back.png);
+    width: 31px;
+    height: 57px;
+    background-size:100%;
+}
+#warnBtn{
+    background:url(../images/public/warn.png);
+    width: 78px;
+    height: 78px;
+    background-size:100%;
+}
+
+#choose1Btn{
+    background:url(../images/buttons/choose1.png)center center no-repeat;
+    width: 281px;
+    height: 99px;
+    background-size:100% 100%;
+}
+#choose5Btn{
+    background:url(../images/buttons/choose5.png)center center no-repeat;
+    width: 281px;
+    height: 99px;
+    background-size:100% 100%;
+}
+#chooseContinueBtn{
+    background:url(../images/buttons/continue.png)center center no-repeat;
+    width: 281px;
+    height: 99px;
+    background-size:100% 100%;
+}
+#bigCloseBtn{
+    float: right;
+    background:url(../images/buttons/big_close.png) center center no-repeat;
+    width: 109px;
+    height: 346px;
+    background-size:100% 100%;
+}
+#littleCloseBtn{
+    float: right;
+    background:url(../images/buttons/little_close.png) center center no-repeat;
+    width: 109px;
+    height: 185px;
+    background-size:100% 100%;
+}
+#clearBtn{
+    background:url(../images/buttons/clear.png) center center no-repeat;
+    width: 172px;
+    height: 50px;
+    backgournd-size:100% 100%;
+    border:none;
+    outline:none;
+}
+#tongzhiBtn{
+    background: url(../images/buttons/tongzhi.png);
+    width: 95px;
+    height: 95px;
+    border:none;
+    outline:none
+}
+.boxBtn{
+    color:#324a07;
+    font-size:60px;
+    font-family:'Arial Black';
+    background:url(../images/buttons/round.png);
+    width: 110px;
+    height: 118px;
+}
+.touzhuBtn{
+    background:url(../images/buttons/touzhubtn.png);
+    width: 219px;
+    height: 84px;
+}
+#issueBuyBtn{
+    background:url(../images/buttons/buy.png);
+    width: 137px;
+    height: 166px;
+}
+#hotRecordBtn{
+    background:url(../images/buttons/record.png);
+    width: 53px;
+    height: 56px;
+    border:none;
+    outline:none;
+}
+#wxlhhBtn{
+    float:left;
+    margin-top:10px;
+    margin-left:2%;
+    background:transparent;
+    width:30%;
+    height: 140px;
+    color: #fccf8c;
+    font-size:55px;
+}
+#wxlhhBtn:hover{
+    background:url(../images/buttons/btn_menu_select.png)center center no-repeat;
+    background-size:100% 100%;
+}
+#wxzhdxdsBtn{
+    float:left;
+    margin-top:10px;
+    background:transparent;
+    width:50%;
+    height: 140px;
+    color: #fccf8c;
+    font-size:55px;
+}
+#wxzhdxdsBtn:hover{
+    background:url(../images/buttons/btn_menu_select.png)center center no-repeat;
+    background-size:100% 100%;
+}
+
+#wmqjsxBtn{
+    float:left;
+    margin-top:10px;
+    background:transparent;
+    width:40%;
+    height: 140px;
+    color: #fccf8c;
+    font-size:55px;
+}
+#wmqjsxBtn:hover{
+    background:url(../images/buttons/btn_menu_select.png)center center no-repeat;
+    background-size:100% 100%;
+}
+
+#sxzx12Btn {
+    float:left;
+    margin-top:10px;
+    margin-left:2%;
+    background:transparent;
+    width:25%;
+    height: 140px;
+    color: #fccf8c;
+    font-size:45px;
+}
+#sxzx12Btn:hover{
+    background:url(../images/buttons/btn_menu_select.png);
+    background-size:100% 100%;
+}
+#wxzx30Btn {
+    float:left;
+    margin-top:10px;
+    margin-left:2%;
+    background:transparent;
+    width:25%;
+    height: 140px;
+    color: #fccf8c;
+    font-size:45px;
+}
+#wxzx30Btn:hover{
+    background:url(../images/buttons/btn_menu_select.png);
+    background-size:100% 100%;
+}
+#sxzx24Btn {
+    float:left;
+    margin-top:10px;
+    margin-left:2%;
+    background:transparent;
+    width:25%;
+    height: 140px;
+    color: #fccf8c;
+    font-size:45px;
+}
+#sxzx24Btn:hover{
+    background:url(../images/buttons/btn_menu_select.png);
+    background-size:100% 100%;
+}
+.buttonClass{
+    background:url(../images/public/btn.png);
+    background-size:100% 100%;
+    width: 194px;
+    height: 105px;
+    font-size:55px;
+    color:red;
+}
+.buttonClass:hover{
+    background:url(../images/buttons/btn_select.png);
+    background-size:100% 100%;
+    width: 194px;
+    height: 105px;
+    font-size:55px;
+    color:red;
+}
+
+.buttonClass249{
+    background:url(../images/public/btn.png);
+    background-size:100% 100%;
+    width: 249px;
+    height: 105px;
+    font-size:55px;
+    color: #727c0b;
+}
+.buttonClass249:hover{
+    background:url(../images/buttons/btn_select.png);
+    background-size:100% 100%;
+    width: 249px;
+    height: 105px;
+    font-size:50px;
+    color: #903401;
+}
+.redBtn{
+    font-size:55px;
+    color:#fffdfd;
+    background:url(../images/buttons/redBtn.png);
+    background-size:100% 100%;
+    width: 92%;
+    height: 129px;
+}
+.blueBtn{
+    font-size:55px;
+    color:#fffdfd;
+    background:url(../images/buttons/blueBtn.png);
+    background-size:100% 100%;
+    width: 92%;
+    height: 129px;
+}
+#addBtn{
+    float: right;
+    background:url(../images/buttons/add.png);
+    width: 55px;
+    height: 55px;
+}
+
+.noBgBtn{
+    background-color: transparent;
+    color:lightseagreen;
+    font-size:50px;
+}
+#tongziBtn{
+    background:url(../images/buttons/tongzhi1.png) center center no-repeat;
+    backfround-size:100%;
+    width: 65px;
+    height: 70px;
+}
+#libaoBtn{
+    background:url(../images/buttons/qianbao.png) center center no-repeat;
+    backfround-size:100%;
+    width: 65px;
+    height: 70px;
+}
+#shezhiBtn{
+    background:url(../images/buttons/setting.png) center center no-repeat;
+    background-size:100%;
+    width: 65px;
+    height: 70px;
+}
+#headIdBtn{
+    background:url(../images/buttons/head.png) center center no-repeat;
+    background-size:100% 100%;
+    width: 250px;
+    height: 250px;
+}
+#rechargeBtn{
+    background:url(../images/buttons/chongzhi.png);
+    width: 146px;
+    height: 205px;
+    background-size:100%;
+}
+#tixianBtn{
+    background:url(../images/buttons/tixian.png);
+    width: 146px;
+    height: 205px;
+    background-size:100%;
+}
+#zhuanzhangBtn{
+    background:url(../images/buttons/zhuanzhang.png);
+    width: 146px;
+    height: 205px;
+    background-size:100%;
+}
+#mingxiBtn{
+    background:url(../images/buttons/mingxi.png);
+    width: 146px;
+    height: 205px;
+    background-size:100%;
+}
+.shuxianBtn{
+    background:url(../images/buttons/shuxian.png);
+    width: 3px;
+    height: 105%;
+
+}
+.redMenuBtn {
+    margin-left:2%;
+    background:transparent;
+    width:100%;
+    height: 130px;
+    color: #fccf8c;
+    font-size:50px;
+}
+.redMenuBtn:hover{
+    background:url(../images/buttons/btn_menu_select.png);
+    background-size:100% 100%;
+}
+
+.nextBtn{
+    background:url(../images/buttons/next.png);
+    width: 34px;
+    height: 66px;
+    background-size:100% 100%;
+
+}
+
+.mainButtonClass{
+    background:transparent;
+    width: 60px;
+    height: 56px;
+    background-size:100%;
+    font-size:50px;
+    color: #748db9;
+    vertical-align: middle;
+}
+.mainButtonClass:hover{
+    background:url(../images/buttons/ziBg.png);
+    width: 60px;
+    height: 56px;
+    background-size:100%;
+    font-size:55px;
+    color:white;
+    vertical-align: middle;
+}
+
+.mainImageButtonClass{
+    background:url(../images/buttons/show.png);
+    width: 57px;
+    height: 57px;
+    background-size:100%;
+    font-size:55px;
+    color:#748db9;
+}
+.mainImageButtonClass:hover{
+    background:url(../images/buttons/show.png);
+    width: 57px;
+    height: 57px;
+    background-size:100%;
+    font-size:55px;
+    color:white;
+}
+.buttonNumberClass{
+    background:url(../images/buttons/numberbtn_normal.png);
+    background-size:100%;
+    width: 98px;
+    height: 101px;
+    font-size:55px;
+    color: #727c0b;
+}
+.buttonNumberClass:hover{
+    background:url(../images/buttons/numberbtn_select.png);
+    background-size:100%;
+    width: 98px;
+    height: 101px;
+    font-size:50px;
+    color: #903401;
+}
+
+
+#FooterJCTJBtn{
+    width: 145px;
+    height: 142px;
+    background:url(../images/buttons/JingCaiTuiJian_normal.png) center center no-repeat;
+    background-size:100% 100%;
+}
+#FooterCGDTBtn{
+    width: 145px;
+    height: 142px;
+    background:url(../images/buttons/CaiGouDaTing_normal.png) center center no-repeat;
+    background-size:100% 100%;
+}
+#FooterKJZSBtn{
+    width: 145px;
+    height: 133px;
+    background:url(../images/buttons/KaiJiangZouShi_normal.png) center center no-repeat;
+    background-size:100% 100%;
+}
+#FooterWDSQtn{
+    width: 156px;
+    height: 158px;
+    background:url(../images/buttons/mySanQi_normal.png) center center no-repeat;
+    background-size:100% 100%;
+}

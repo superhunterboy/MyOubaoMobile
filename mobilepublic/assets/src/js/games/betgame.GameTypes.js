@@ -1,0 +1,245 @@
+﻿
+
+(function(host, name, Event, undefined){
+	var defConfig = {
+		//主面板dom
+		panel:'#J-panel-gameTypes'
+	},
+	//渲染实例
+	instance,
+	//游戏实例
+	Games = host.Games;
+
+	//渲染方法
+	var pros = {
+		init:function(cfg){
+			var me = this;
+			//缓存方法
+			Games.setCurrentGameTypes(me);
+			me.container = $(cfg.panel);
+			//玩法数据
+			me.data = Games.getCurrentGame().getGameConfig().getInstance().getMethods();
+			me.buildDom();
+			me.initEvent();
+		},
+		buildDom:function(){
+			var me = this,it,it2,it3,strArr = [],strArrAll = [],modeArr = [];
+			me.renxuanCount = 0;
+			$.each(me.data, function(){
+				strArr = [];
+				it = this;
+				if( it['isRenxuan'] ){
+					me['renxuanCount'] += 1;
+					strArr.push('<li class="gametypes-menu-'+ it['name_en'] +' gametypes-menu-renxuan" data-renxuan>');
+				}else{
+					strArr.push('<li class="gametypes-menu-'+ it['name_en'] +'">');
+				}
+					strArr.push('<div class="title">');
+						strArr.push(it['name_cn']);
+						modeArr[0] = it['name_en'];
+						strArr.push('<span></span>');
+					strArr.push('</div>');
+					// strArr.push('<div class="content">');
+
+					// $.each(it['children'], function(){
+					// 	it2 = this;
+					// 	modeArr[1] = it2['name_en'];
+					// 	strArr.push('<dl>');
+					// 		strArr.push('<dd class="types-node types-node-'+ it2['name_en'] +'">'+ it2['name_cn'] +'</dd>');
+					// 		$.each(it2['children'], function(){
+					// 			it3 = this;
+					// 			modeArr[2] = it3['name_en'];
+					// 			strArr.push('<dd class="types-item" data-id="'+ it3['id'] +'">'+ it3['name_cn'] +'</dd>');
+					// 		});
+					// 	strArr.push('</dl>');
+					// });
+					// strArr.push('</div>');
+				strArr.push('</li>');
+
+				strArrAll.push(strArr.join(''));
+			});
+			if( me.renxuanCount ){
+				strArrAll.push('<li class="gametypes-menu-toggle">任选玩法</li>');
+			}
+			me.getContainerDom().html(strArrAll.join(''));
+
+			//构建平板面板菜单
+			me.buildPanelMenu();
+
+			setTimeout(function(){
+				me.fireEvent('endShow');
+			}, 20);
+
+		},
+		buildPanelMenu:function(){
+			var me = this,it,it2,it3,strArr = [],strArrAll = [],modeArr = [],
+					panelDom = me.getPanelDom(), en_name = Games.getCurrentGame().getGameConfig().getInstance().getGameNameEn();
+			// 快三玩法
+			if( en_name == 'JSK3' ){
+				strArr.push('<div class="gametypes-sort gametypes-menu-all">');
+				strArr.push('<dl class="dl-without-dt">');
+				$.each(me.data, function(){
+					it = this;
+					$.each(it['children'], function(){
+						it2 = this;
+						$.each(it2['children'], function(){
+							it3 = this;
+							strArr.push('<dd class="types-item" data-id="'+ it3['id'] +'" data-title="' +it3['name_cn']+ '">'+ it3['name_cn'] +'</dd>');
+						});
+					});
+				});
+				strArr.push('</dl>');
+				strArr.push('</div>');
+				strArrAll.push(strArr.join(''));
+			}
+			// 其他玩法
+			else{
+				$.each(me.data, function(){
+					strArr = [];
+					it = this;
+					// 手动去掉任选玩法
+					if( it['name_en'].indexOf('renxuan') != -1 && en_name.indexOf('115') == -1 ) return;
+					strArr.push('<div class="gametypes-sort gametypes-menu-'+ it['name_en'] +'">');
+						$.each(it['children'], function(){
+							it2 = this;
+							modeArr[1] = it2['name_en'];
+							strArr.push('<dl>');
+							if( it['name_en'] == 'budingwei' || it['name_en'] == 'daxiaodanshuang' || it['name_en'] == 'quwei' ){
+								strArr.push('<dt class="types-node types-node-'+ it2['name_en'] +'">'+ it2['name_cn'] +'</dt>');
+							}else{
+								strArr.push('<dt class="types-node types-node-'+ it2['name_en'] +'">'+ it['name_cn'] + it2['name_cn'] +'</dt>');
+							}
+							$.each(it2['children'], function(){
+								it3 = this;
+								//if(
+								//	it3['name_en'].indexOf('danshi') != -1 || it3['name_en'].indexOf('hunhezuxuan') != -1 ){
+								//	// 这里手动去掉单式
+								//}else{
+									modeArr[2] = it3['name_en'];
+									if( it['name_en'] == 'budingwei' || it['name_en'] == 'daxiaodanshuang' || it['name_en'] == 'quwei' ){
+										strArr.push('<dd class="types-item" data-id="'+ it3['id'] +'" data-title="' +it3['name_cn']+ '">'+ it3['name_cn'] +'</dd>');
+									}else{
+										strArr.push('<dd class="types-item" data-id="'+ it3['id'] +'" data-title="' +it['name_cn']+it3['name_cn']+ '">'+ it3['name_cn'] +'</dd>');
+									}
+								//}
+							});
+							strArr.push('</dl>');
+						});
+					strArr.push('</div>');
+
+					strArrAll.push(strArr.join(''));
+				});
+			}
+			panelDom.html(strArrAll.join(''));
+		},
+		initEvent:function(){
+			var me = this;
+			// me.container.on(host.touchEvent, '.types-item', function(){
+			// 	var el = $(this),id = el.attr('data-id');
+			// 	if(id){
+			// 		me.changeMode(id, el);
+			// 	}
+			// });
+			me.getPanelDom().on(host.touchEvent, '.types-item', function() {
+				var el = $(this),id = el.attr('data-id');
+				if(id){
+					me.changeMode(id, el);
+				}
+			});
+
+			/*Games.getCurrentGame().addEvent('afterSwitchGameMethod', function(obj, id){
+				// console.log('daf');
+				var el = me.getPanelDom().find('dd[data-id=' + id + ']'),
+					cls = 'types-item-current',
+					cls2 = 'gametypes-sort-current';
+				me.getPanelDom().find('.types-item').removeClass(cls);
+				el.addClass(cls);
+				// console.log(el)
+				//显示大面板
+				me.getPanelDom().children().removeClass(cls2);
+				el.parents('.gametypes-sort').addClass(cls2);
+			});*/
+
+			me.container.on(host.touchEvent, '.title', function(){
+				// $(this).parents('ul').find('li').removeClass('hover')
+
+				// me.container.find('.content').hide();
+				// $(this).parents('li').find('.content').show();
+				// $(this).parents('li').addClass('hover');
+				// var id =$(this).next('div.content').find('dd.types-item:first').attr('data-id');
+
+
+
+				// Games.getCurrentGame().getCurrentGameMethod().container.find('.number-select-link').hide();
+				// me.changeMode(id);
+				var idx = $(this).parent().index(),
+					$parent = $(this).parents('ul').find('li'),
+					$panel = me.getPanelDom().find('.gametypes-sort');
+				$parent.removeClass('current').eq(idx).addClass('current');
+				$panel.hide().removeClass('current').eq(idx).addClass('current').show();
+
+				var id = $panel.eq(idx).find('dd.types-item:first').attr('data-id');
+
+
+				// Games.getCurrentGame().getCurrentGameMethod().container.find('.number-select-link').hide();
+				me.changeMode(id);
+
+
+				/*var el = $(this),
+					parent = el.parent(),
+					lis = parent.parent().children(),
+					index = lis.index(parent.get(0)),
+					panel = me.getPanelDom().find('.gametypes-sort').eq(index),
+					dom = panel.find('.types-item').eq(0),
+					id = dom.attr('data-id');
+				// console.log(id,index, dom)
+				me.changeMode(id, dom);*/
+			});
+
+			me.container.on(host.touchEvent, '.gametypes-menu-toggle', function(){
+				me.fireEvent('afterGametypesChange', this);
+			});
+		},
+		//获取外部容器DOM
+		getContainerDom: function(){
+			return this.container;
+		},
+		getPanelDom:function(){
+			return this.panelDom || (this.panelDom = $('#J-gametyes-menu-panel'));
+		},
+		//切换事件
+		changeMode: function(mode, el){
+			var me = this,
+				container = me.getContainerDom();
+
+			//执行自定义事件
+			me.fireEvent('beforeChange', mode);
+			try{
+				if(mode == Games.getCurrentGame().getCurrentGameMethod().getGameMethodName()){
+					return;
+				}
+			}catch(e){
+			}
+			//执行切换
+			Games.getCurrentGame().switchGameMethod(mode);
+		}
+	};
+
+	var Main = host.Class(pros, Event);
+		Main.defConfig = defConfig;
+		Main.getInstance = function(cfg){
+			return instance || (instance = new Main(cfg));
+		};
+	host[name] = Main;
+
+})(betgame, "GameTypes", betgame.Event);
+
+
+
+
+
+
+
+
+
+

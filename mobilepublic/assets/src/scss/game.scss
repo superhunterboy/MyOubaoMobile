@@ -1,0 +1,1129 @@
+@import 'common.scss';
+
+$panelPadding: 4%;
+%panel-padding{
+  padding: 5px $panelPadding;
+}
+
+label{
+  font-weight: 200;
+}
+// 游戏首页
+.game-lobby-tabs{
+  .tab-pane{
+    .item{
+      display: block;
+      font-size: 0;
+      clear: both;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba($cGray, .3);
+      >div{
+        display: inline-block;
+        vertical-align: middle;
+      }
+      .item-left{
+        width: 30%;
+        >img{
+          display: block;
+          width: 80%;
+          margin: 0 auto;
+          padding: 0 5%;
+        }
+      }
+      .item-body{
+        width: 60%;
+        color: $cGray;
+        h2{
+          font-size:24px;
+          margin-top: 0;
+          margin-bottom: 0;
+          +p{
+            margin-top: 10px;
+          }
+        }
+        p{
+          color: rgba($cGray, .9);
+          font-size: 14px;
+          margin-bottom: 0;
+        }
+      }
+      .item-right{
+        width: 10%;
+        .glyphicon{
+          font-size: 20px;
+          color: $cGray;
+        }
+      }
+    }
+    >a{
+      @for $i from 1 through length($gameBgColors) {
+        $color: nth($gameBgColors, $i);
+        &:nth-child(6n+#{$i}) {
+//          img{
+//            background-color: $color;
+//          }
+        }
+      }
+    }
+  }
+}
+
+// 游戏玩法
+%method-button{
+  padding: 2px 5px;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  font-weight: normal;
+  margin: 2px;
+  transition: all .6s ease-out;
+  color: $cGray;
+}
+%method-selected{
+  border-color: #D22A2A;
+  color: #D22A2A;
+}
+.game-method-panel{
+  width: 100%;
+  @extend %panel-padding;
+  position: relative;
+  background-color: $bgColor1;
+  label{
+    @extend %method-button;
+    line-height: 22px;
+    font-size: 14px;
+    @include max-screen(360px) {
+      &{
+        font-size: 12px;
+      }
+    }
+    &.selected{
+      @extend %method-selected;
+    }
+  }
+  @at-root .game-method-choosed{
+    width: 94%;
+    white-space: nowrap;
+    overflow-x: auto;
+    position: relative;
+    z-index: 1;
+    height: 32px;
+  }
+  @at-root .game-method-drop-toggle{
+    z-index: 3;
+    display: inline-block;
+    font-size: 17px;
+    margin-left: 4px;
+  }
+}
+// 游戏玩法列表
+.game-method-modal{
+  @at-root .game-method-list{
+    // position: absolute;
+    // left: 0;
+    // top: 40px;
+    width: 100%;
+    // height: 700%;
+    padding: 5px 0;
+    transition: all .4s ease-out;
+    // margin-top: -20px;
+    // opacity: 0;
+    // display: none;
+    text-align: left;
+    background-color: $bgColor1;
+    // border-top: 1px solid $cBorder;
+    z-index: 10;
+    &.show{
+      margin-top: 0;
+      opacity: 1;
+      display: block;
+    }
+    >div:last-child dl{
+      border-bottom: none;
+    }
+    dl{
+      width: 100%;
+      padding: 0;
+      list-style: none;
+      margin-bottom: 0;
+      font-size: 0;
+      line-height: 0;
+      position: relative;
+      padding-left: 25%;
+      // padding: 5px 0;
+      border-bottom: 1px dashed $cBorder;
+      &.dl-without-dt{
+        padding-left: 0;
+      }
+      &:before,
+      &:after{
+        content: " ";
+        display: table;
+      }
+      &:after{
+        clear: both;
+      }
+      dt, dd{
+        padding: 2px 5px;
+        white-space: nowrap;
+        display: inline-block;
+        font-size: 14px;
+        @include max-screen(360px) {
+          &{
+            font-size: 12px;
+          }
+        }
+        border: 1px solid transparent;
+        @extend %method-button;
+      }
+      dt{
+        width: 25%;
+        position: absolute;
+        left: 0;
+        // line-height: 1.5; // 大于dd的line-height:1.42857143
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        color: $cGrayDark;
+        // text-align: right;
+      }
+      dd{
+        &.selected{
+          @extend %method-selected;
+        }
+      }
+    }
+  }
+  .modal-header{
+    padding: 10px;
+    font-size: 14px;
+    text-align: center;
+    .bootstrap-dialog-title{
+      // line-height: 2;
+    }
+  }
+  .modal-body{
+    padding: 5px;
+    overflow-y: auto;
+    max-height: 360px;
+  }
+}
+
+// 游戏基本信息
+.game-status-panel{
+  background-color: $bgColor2;
+  border-top: 1px dashed $cBorder;
+  border-bottom: 1px solid $cBorder;
+  line-height: 1.5;
+  font-size: 16px;
+  @include max-screen(360px) {
+    &{
+      font-size: 14px;
+      line-height: 16px/14px*1.5;
+    }
+  }
+  @extend %panel-padding;
+  >div{
+    display: inline-block;
+    >span{
+      vertical-align: middle;
+    }
+  }
+  .shake-number, .money-unit{
+    position: relative;
+    &:before{
+      content: '';
+      height: 70%;
+      position: absolute;
+      left: -20px;
+      top: 15%;
+      border-left: 1px solid rgba($cBorder, .6);
+    }
+  }
+  .money-unit{
+    // font-size: 14px;
+    // line-height: 16px/14px*1.5;
+    >div{
+      display: inline-block;
+    }
+    input[type="radio"]{
+      transform: scale(.8);
+    }
+    label{
+      border-radius: 3px;
+      margin-bottom: 0;
+      transform: scale(.8) translateX(-3px) ;
+    }
+  }
+  .game-current-issue{
+    margin-right: 10px;
+    @include max-screen(360px){
+      margin-right: 0;
+    }
+    >span{
+      padding: 0 3px;
+    }
+  }
+}
+@keyframes ball{
+  0% {
+    transform:scale(.6);
+    opacity:0.4;}
+  100% {
+    transform:scale(1);
+    opacity:1;
+  }
+}
+// 选号区
+.ball-select-panel{
+  overflow-y: auto;
+  @at-root .ball-section{
+    background-color: $bgColor1;
+    border-top: 1px solid #eceeef;
+    border-bottom: 1px solid #eceeef;
+    overflow-x: hidden;
+  }
+  @at-root .ball-section-top{
+    @extend %panel-padding;
+    line-height: 20px;
+    border-bottom: 1px dashed $cBorder;
+    h2{
+      display: inline-block;
+      margin: 0;
+      font-weight: bold;
+      font-size: 16px;
+      line-height: 20px;
+      // border-right: 1px solid $cBorder;
+      padding-right: 10px;
+    }
+    .ball-control{
+      float: right;
+      >span{
+        display: inline-block;
+        padding: 0 5px;
+        font-size: 14px;
+        &.current{
+          color: $cHighlight;
+        }
+        &.none, &.none.current{
+          color: inherit;
+        }
+      }
+    }
+  }
+  $ballRowNum: 6;
+  $width: 12;
+  // $ballRowNum: 10;
+  // $width: 9;
+  $gap: (100 - $ballRowNum * $width)/($ballRowNum*2);
+  $ballNumberHeight: $width * ( 100% - $panelPadding*2 + $gap * 1% * 2 ) / 100%;
+
+  // FOR LONG BALL NUMBER
+  $width2: 30; // 保证每行宽度小于100%
+  $gap2: (100 - $ballRowNum/2 * $width2)/($ballRowNum/2 * 2) + %;
+
+  @at-root .ball-section-content{
+    @extend %panel-padding;
+    // width: 100%;
+    margin-left: -$gap + %;
+    margin-right: -$gap + %;
+    font-size: 0;
+    line-height: 0;
+    .ball-number{
+      display: inline-block;
+      height: 10vw;
+      width: 10vw;
+      margin: 5px $gap + %;
+      position: relative;
+      font-weight: normal;
+      // 注意其兄弟节点有没有不是.ball-number的
+      // &:nth-child(#{$ballRowNum}n+1){
+      //   margin-left: 0;
+      // }
+      // &:nth-child(#{$ballRowNum}n){
+      //   margin-right: 0;
+      // }
+      text-align: center;
+      color: white;
+      @extend %ball-back;
+      @extend %ball-style-back;
+      border-radius: $ballNumberHeight + vw;
+      &:after{
+        @extend %ball-front;
+        @extend %ball-style-front;
+        border-radius: $ballNumberHeight + vw;
+        font-size: 22px;
+        @include max-screen(360px) {
+          &{
+            font-size: 18px;
+          }
+        }
+        line-height: $ballNumberHeight * 0.7 + vw;
+        font-weight: 200;
+        color: $cGray;
+      }
+      &.ball-number-current{
+        animation: ball .32s ease-out 0s forwards;
+        @extend %ball-style-selected-back;
+      }
+      &.ball-number-current:after{
+        @extend %ball-style-selected-front;
+        color: white;
+        text-shadow: 1px 1px 1px rgba(0,0,0, .6);
+      }
+    }
+    .ball-number-long{
+      margin: 5px $gap2;
+      width: $width2 + %;
+      // &:nth-child(#{$ballRowNum/2}n+1){
+      //   margin-left: 0;
+      // }
+      // &:nth-child(#{$ballRowNum/2}n){
+      //   margin-right: 0;
+      // }
+      &:after{
+        // 根据计算所得，当前的宽度是之前的宽度的两倍
+        // 垂直方向的间隙和水平方向的间隙相同，那么可以得到以下公式
+        // h-hx=w-wy，其中w=2h，x为高度占比(80%=0.8)，y为宽度占比(需计算);
+        // => h(1-x) = w(1-y) => h(1-x) = ($width2/$width)*h(1-y)
+        // => ($width2/$width)*y = $width2/$width + x -1
+        // (x=0.8) =>  y = 1 - (1 - 0.8) / ($width2/$width)
+        $percent: ( 1 - (1 - 0.8)/($width2/$width) )*100;
+        width: $percent + %;
+        left: (100-$percent)/2 + %;
+        font-size: 20px;
+        @include max-screen(360px) {
+          &{
+            font-size: 16px;
+          }
+        }
+      }
+    }
+    .ball-number-hidden{
+      display: none;
+    }
+  }
+}
+
+
+// 统计区
+.statistics-panel{
+  position: fixed;
+  bottom: 5px;
+  left: 0;
+  width: 100%;
+  z-index: 2;
+  // background-color: rgba(#343436, 1);
+  /*background: $bgColorPanel;*/
+  border-top: 2px solid #D22A2A;
+  padding-top  :5px;
+  /*padding: 10px $panelPadding/2;*/
+  .bet-statistics{
+    position: relative;
+    text-align: center;
+    white-space: nowrap;
+    font-weight: 200;
+    font-size: 16px;
+    @include max-screen(360px) {
+      &{
+        font-size: 14px;
+      }
+    }
+  }
+  .bet-buttons{
+    white-space: nowrap;
+    @at-root .btn{
+      outline: none!important;
+      &.btn-choose{
+        // background-color: #0eb9c4;
+        background-color: #111;
+        color: white;
+      }
+      &.btn-fast-submit, &.btn-submit{
+        background-color: #D22A2A;
+        color: white;
+      }
+    }
+  }
+}
+
+// 购彩篮
+.cart-panel{
+  z-index: 4;
+  background-color: $bgColor1;
+  .cart-content{
+    position: relative;
+  }
+  .cart-top{
+    text-align: center;
+    @extend %panel-padding;
+    .btn{
+      background-color: $bgColor2;
+      border-color: $cBorder;
+    }
+  }
+  .cart-inner{
+    border-top: 1px dashed $cBorder;
+    background-color: $bgColor2;
+    padding: 10px 8%;
+    // box-sizing: initial;
+    @at-root .cart-wrap{
+      padding: 0 2px;
+      border-top: 1px solid #b4b6b7;
+      border-radius: 4px 4px 0 0;
+      height: 100%;
+      overflow-y: auto;
+    }
+    @at-root .order-detail{
+      list-style: none;
+      padding: 0;
+      margin-bottom: 0;
+      background-color: $bgColor1;
+      // border-left: 1px solid rgba($cBorder, .6);
+      // border-right: 1px solid rgba($cBorder, .6);
+      // border-radius: 3px 3px 0 0;
+      >li{
+        border-bottom: 1px dashed rgba($cBorder, .6);
+        padding: 5px 10px;
+        font-size: 12px;
+        position: relative;
+      }
+      .number{
+        display: block;
+        width: 80%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        color: $cHighlight;
+        font-size: 14px;
+        margin-bottom: 4px;
+      }
+      .name,.amount{
+        display: inline-block;
+        white-space: nowrap;
+        vertical-align: middle;
+      }
+      .name{
+        width: 30%;
+        text-overflow: ellipsis;
+        overflow: hidden;
+      }
+      .delete{
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        margin-top: -8px;
+        font-size: 12px;
+        width: 16px;
+        height: 16px;
+        line-height: 16px;
+        text-align: center;
+        background-color: $bgColor2;
+        border-radius: 100%;
+      }
+    }
+    .order-clear,.order-empty{
+      text-align: center;
+      line-height: 2;
+      background-color: $bgColor1;
+      // border: 1px solid rgba($cBorder, .6);
+      // border-top: none;
+      border-bottom: 1px solid rgba($cBorder, .6);
+      border-radius: 0 0 3px 3px;
+      >span{
+        vertical-align: middle;
+      }
+      display: none;
+    }
+    .order-empty{
+      padding: 10px 0;
+    }
+  }
+  .cart-bottom{
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+    border-top: 1px solid $cBorder;
+    background-color: $bgColor1;
+    @extend %panel-padding;
+    >label{
+      padding: 0 5px;
+    }
+    input[type="number"],input[type="text"]{
+      width: 50px;
+      outline: none!important;
+      padding: 5px;
+      text-align: center;
+      background-color: $bgColor2;
+      border: 1px solid $cBorder;
+      color: $cHighlight;
+      margin: 0 5px;
+    }
+  }
+
+}
+
+
+/** 投注确认提示框 **/
+.bootstrap-dialog-body{
+  text-align: center;
+  .ui-form{
+    list-style: none;
+    padding-left: 0;
+    text-align: left;
+    margin-bottom: 0;
+    >li{
+      margin-top: 5px;
+    }
+  }
+  label{
+    margin-bottom: 0;
+  }
+  .game-submit-confirm-cont{
+    font-size: 12px;
+  }
+  .game-submit-confirm-title{
+    font-size: 14px;
+    margin-bottom: 0;
+  }
+  .textarea{
+    border: 1px solid $cBorder;
+    background-color: $bgColor1;
+    padding: 10px;
+    max-height: 100px;
+    overflow-y: auto;
+  }
+  .game-submit-confirm-list{
+  }
+  .game-submit-confirm-tip{
+    font-size: 12px;
+    text-align: center;
+  }
+  .game-statistics-multiple-text{
+    display: none;
+  }
+  .bet-failed-list{
+    border: 1px solid $cBorder;
+    background-color: $bgColor1;
+    padding: 5px;
+    margin-top:  5px;
+    font-size: 12px;
+    >p{
+      margin-bottom: 5px;
+    }
+  }
+}
+.method-instruction-dialog{
+  .bootstrap-dialog-message{
+    text-align: left;
+    label{
+      font-weight: bold;
+    }
+  }
+}
+
+
+.panel-select {
+  padding: 0 4%;
+}
+.content-textarea-balls {
+  width: 100%;
+  height: 5rem;
+}
+.panel-btn {
+  padding: 5px 4%;
+}
+.panel-btn{
+  .btn {
+    background-color: #111111;
+    color: #fff;
+    margin-right: 5px;
+  }
+}
+
+
+.panel-trace {
+  color: #333;
+}
+.chase-tab-title {
+  text-align:center;
+  padding:0;
+    color: #111;
+    background: #fff;
+    line-height: 0;
+    border-bottom: 1px solid #d22a2a;
+}
+.chase-tab-title ul {
+  padding-left:0;
+  display: inline-block;
+    border: 1px solid #d22a2a;
+  overflow: hidden;
+    margin: 10px 0;
+  list-style: none;
+}
+.chase-tab-title ul li {
+  display: inline-block;
+}
+.chase-tab-t {
+  line-height: 30px;
+  padding: 0 5px;
+}
+.chase-tab-t.current {
+    background: #d22a2a;
+    color:#fff;
+}
+.chase-tab-content {
+  display: none;
+  padding: 10px 0;
+}
+.chase-tab-content-current {
+  display: block;
+}
+.trace-row-multiple,
+.input {
+  display: inline-block;
+  height: 18px;
+  padding: 4px 0;
+  border: 1px solid #C6C6CC;
+  line-height: 18px;
+  vertical-align: middle;
+  font-size: 12px;
+  color: #535471;
+  border-radius: 2px;
+  width: 1.2rem !important;
+}
+
+.chase-tab-content .input {
+    width: 1rem !important;
+  text-align: center;
+  padding: 4px 0;
+}
+.trace-title-param {
+  padding-bottom: 10px;
+  text-align: center;
+}
+.trace-button-clear-trace,
+.trace-title-param .btn {
+    width: 80%;
+    background-color: #d22a2a;
+  font-size: 12px;
+  color: #fff;
+  padding: 4px 6px;
+}
+
+.chase-table {
+  width:100%
+}
+.chase-table th,
+.chase-table td {
+  line-height: 20px;
+  padding: 2px 3px;
+  background: #F7F7F7;
+  text-align: center;
+  color: #666;
+  border-right: 1px solid #DBDBDB;
+  border-top: 1px solid #DBDBDB;
+}
+.chase-stop {
+  text-align: center;
+    display: inline-block;
+}
+.chase-stop .label {
+    color: #000;
+  line-height: 27px;
+  display: inline;
+}
+.chase-stop .label input {
+  display: inline;
+  margin: 0;
+  vertical-align: middle;
+}
+
+
+.panel-trace .bet-statistics {
+  padding: 0;
+  text-align: center;
+  width: 100%;
+
+}
+.bet-statistics li {
+  display: inline-block;
+  vertical-align: middle;
+}
+.chase-table-container {
+  overflow-y: auto;
+  height: 298px;
+    background: #f5f5f5;
+}
+.trace-panel .statistics-panel  {
+  text-align: center;
+}
+.trace-panel .statistics-panel .bet-buttons {
+  display: inline-block;
+}
+
+.panel-select {
+    padding: 0 4%
+}
+
+
+//20170509
+.bounsInfo {
+  position: fixed;
+  bottom: 46px;
+  left: 0;
+  width: 100%;
+  font-size: 0;
+  z-index: 2;
+  overflow: hidden;
+  transform: translateX(0);
+  -ms-transform: translateX(0);
+  -moz-transform: translateX(0);
+  -webkit-transform: translateX(0);
+  -o-transform: translateX(0);
+  transition: all 500ms ease;
+  -ms-transition: all 500ms ease;
+  -moz-transition: all 500ms ease;
+  -webkit-transition: all 500ms ease;
+  -o-transition: all 500ms ease;
+  background: #fff;
+  border-top: 1px solid #c2bfbf;
+  color: #3e3e3e;
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Chrome/Safari/Opera */
+  -khtml-user-select: none; /* Konqueror */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none;
+}
+.bounsInfo .unit {
+  line-height: 22px;
+  font-size: 0.34rem;
+  display: inline-block;
+  vertical-align: middle;
+  padding: 5px 0;
+  height: 32px;
+  float: left;
+  overflow: hidden;
+  padding-left: .3em;
+}
+.bounsInfo .unit>span {
+  float: left;
+  padding: 0 3px;
+}
+.bounsInfo .unit .unit-box {
+  display: inline-block;
+  padding: 0 1px;
+  width: 1rem;
+  height: 22px;
+  float: left;
+  text-align: center;
+  line-height: 20px;
+  position: relative;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -o-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border: 1px solid #ababab;
+}
+.bounsInfo .unit .unit-box .native-select {
+  width: auto;
+  height: 100%;
+  padding: 0 5px;
+  display: inline-block;
+  color: #262626;
+  background: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  outline: 0;
+  border: none;
+  box-shadow: none;
+}
+
+
+.bonus-choose {
+  display: inline-block;
+  vertical-align: top;
+  padding: 5px 0;
+  line-height: 22px;
+  height: 32px;
+}
+.slider-range {
+  position: relative;
+  display: inline-block;
+  margin: 0;
+  width: auto;
+  height: auto;
+  color: #666;
+  padding: 0 0.05rem;
+  font-size: 0.34rem;
+}
+
+.slider-range-scale {
+  position: relative;
+  float: left;
+  margin: 0;
+  text-align: center
+}
+
+.slider-range-scale span {
+  color: inherit;
+  font-size: inherit;
+  position: static
+}
+
+.slider-range-scale .big-number,.slider-range-scale .small-number {
+  display: none
+}
+
+.slider-range-scale .percent-number {
+  position: static;
+  margin-left: 0;
+  color: #ff5a00
+}
+
+.slider-current-value {
+  text-align: center;
+  color: #ff5a00
+}
+
+.slider-action {
+  margin: 0 1rem;
+  position: relative;
+  height: 22px;
+  width: 3.5rem;
+  top: 2px;
+}
+
+.slider-range-add,.slider-range-sub {
+  position: static;
+  width: 0.5rem;
+  height: 0.5rem;
+  line-height: 0.4rem;
+  text-indent: 0;
+  text-align: center;
+  background: 0 0;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none
+}
+
+.slider-range-sub {
+  cursor: pointer;
+  float: left;
+  border: 1px solid #ddd;
+  left: 0;
+}
+
+.slider-range-add {
+  cursor: pointer;
+  float: right;
+  border: 1px solid #ddd
+}
+
+.slider-range-add.disabled,.slider-range-sub.disabled {
+  opacity: .5;
+  filter: alpha(opacity=50);
+  cursor: default
+}
+
+.slider-range-wrapper {
+  position: relative;
+  width: auto;
+  background-color: silver;
+  border-color: #fff;
+  cursor: pointer;
+  height: 5px;
+  margin: 0 0.56rem;
+  border-radius: 2px;
+  top: 50%;
+  margin-top: -5px;
+  border: 1px solid #fff;
+}
+
+.slider-range-inner {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 80%;
+  height: 3px;
+  background-color: #ff4e00;
+  border-radius: 2px
+}
+
+.silder-range-disabled .slider-range-inner {
+  background-color: #cdcdcd
+}
+
+.slider-range-btn {
+  width: 0.4rem;
+  height: 0.4rem;
+  border: 1px solid #b3b3b3;
+  background: #f3f3f3;
+  border-radius: 1px;
+  margin-top: -0.2rem;
+  position: absolute;
+  top: 50%;
+}
+
+.bounsInfo .multiple {
+  line-height: 22px;
+  font-size: 0.34rem;
+  display: inline-block;
+  vertical-align: middle;
+  padding: 5px 0;
+  height: 32px;
+  float: left;
+  overflow: hidden;
+}
+.bounsInfo .multiple>span {
+  float: left;
+  padding: 0 3px;
+}
+.bounsInfo .multiple input[type=number],
+.bounsInfo .multiple input[type=text] {
+  width: 1rem;
+  height: 22px;
+  line-height: 22px;
+  outline: 0!important;
+  text-align: center;
+  background-color: #f4f4f4;
+  border: 1px solid #d3d6d6;
+  color: #D22A2A;
+  border-radius: 3px;
+  padding: 0;
+  -moz-border-radius: 3px;
+  -o-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -webkit-border-radius: 3px;
+}
+.select-counter-action {
+  vertical-align: middle;
+  display: inline-block;
+  width: 0.5rem;
+  line-height: 18px;
+  text-align: center;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size:  0.4rem;
+  font-family: arial;
+  border: 1px solid #caced1;
+  color: #a8aeb3;
+  background-color: #f4f4f4;
+  background-image: -webkit-linear-gradient(top,#f4f4f4,#e9ebec);
+  background-image: linear-gradient(to bottom,#f4f4f4,#e9ebec);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f4f4f4', endColorstr='#e9ebec');
+  box-shadow: inset 0 1px 1px #fff;
+  text-shadow: 0 1px 1px #fff;
+  -o-user-select: none;
+  user-select: none
+}
+
+.select-counter-action.disabled {
+  cursor: default;
+  opacity: .4;
+  filter: alpha(opacity=40)
+}
+.game-countdown {
+  display: inline-block;
+}
+
+
+
+//开奖历史
+.game-trend-pannel {
+  position: relative;
+}
+
+
+.game-trend-pannel a.bet-table-trend-btn {
+  position: absolute;
+  border-radius: 0 0 4px 4px;
+  border: 1px solid #d3d6d6;
+  background: #f5f5f5;
+  left: 50%;
+  width: 50px;
+  margin-left: -25px;
+  height: 20px;
+  bottom: -19px;
+  overflow: hidden;
+  border-top-color: #f1f1f1;
+  text-align: center;
+  color: #cacaca;
+  z-index: 2;
+}
+
+.bet-table-well {
+  overflow: hidden;
+  min-height: 20px;
+  padding: 5px 0;
+  width: 100%;
+  background-color: #f5f5f5;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.05);
+  box-shadow: inset 0 1px 1px rgba(0,0,0,0.05);
+}
+.collapse.in  .bet-table-well{
+  border-bottom: 1px solid #d3d6d6;
+}
+.table.bet-table-trend {
+  overflow: hidden;
+  width: 100%;
+  font-size: 13px;
+  margin: 0;
+}
+.game-trend-pannel .bet-table-trend>thead>tr>th {
+  text-align: center;
+  background: #3c4a67;
+  padding: 3px 0px;
+}
+.bet-table-trend th span {
+  color: #fffefd;
+}
+.game-trend-pannel .bet-table-trend>tbody>tr>td {
+  text-align: center;
+  padding: 3px 0;
+  vertical-align: middle;
+  border-bottom: 1px dotted #CCC;
+}
+.bet-table-trend tr:hover td {
+  background: #F9F7F2;
+}
+.bet-table-trend .balls i {
+  display: inline-block;
+  width: 19px;
+  height: 19px;
+  text-align: center;
+  line-height: 20px;
+  font-style: normal;
+  margin:0 1px;
+  color: #b2a789;
+  font-size: 14px;
+}
+.bet-table-trend .balls i.curr {
+  color: #f36e3d;
+  border-color: #f36e3d;
+}
+.game-trend-pannel .bet-table-trend>tbody>.last>td {
+  border-bottom: none;
+}
+.bet-table-trend .first .balls i {
+  border: 1px solid #eae7e0;
+  border-radius: 15px;
+  background: #eae7e0;color: #74694E;
+}
+.bet-table-trend .first .balls i.curr {
+  color: #FFF;
+  background:#f36e3d;
+  border-color: #fcd6c8;
+}
+.bet-table-trend-btn .glyphicon-chevron-up,
+.bet-table-trend-btn.collapsed .glyphicon-chevron-down {
+  display: inline-block;
+}
+.bet-table-trend-btn.collapsed .glyphicon-chevron-up,
+.bet-table-trend-btn .glyphicon-chevron-down {
+  display: none;
+}

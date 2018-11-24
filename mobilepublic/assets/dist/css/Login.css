@@ -1,0 +1,101 @@
+.divContent{
+    padding:40px 40px 260px 40px ;
+    width: 92%;
+}
+.divContent .divLogo{
+    text-align: center;
+    width: 100%;
+    /*margin-top: 15%;
+    margin-bottom: 5%;*/
+}
+.divLogin{
+    /* background-image:url(../image/little_bg.png);
+     background-size:100% 100%;*/
+    background:ghostwhite;
+    width: 100%;
+    height: 750px;
+    text-align: center;
+}
+.divLogin .p1{
+    text-align: center;
+    padding-top: 50px;
+    color: dimgray;
+    font-size: 70px;
+    font-family: 微软雅黑;
+}
+.divLogin .p2{
+    color: #0099FF;
+    font-size: 40px;
+    font-family: 微软雅黑;
+}
+.divLogin .l{
+    color:#666;
+    background-color: white;
+    border: 1px solid #c0c0c0;
+}
+.divLogin li{
+    height:100px;
+    line-height: 100px;
+    /* width: 700px;*/
+    margin: 0px 100px 25px 100px;
+}
+.divLogin li .img1{
+    padding: 20px 10px 20px 20px;
+    float: left;
+}
+.divLogin li .input1{
+    width:600px;
+    height: 100px;
+    line-height: 100px;
+    outline:none;
+    border:0px;
+    font-size: 40px;
+    font-family: 微软雅黑;
+    color:#666;
+}
+input[type=checkbox]{
+    float: left;
+    outline:none;
+    -webkit-appearance: none;
+    background:url(../Images/public/check_select.png);
+    -webkit-background-size:100%;
+    background-size:100%;
+    margin:10px 10px 10px 10px;
+    height:80px;
+    width:80px;
+    vertical-align:middle;
+    display: block;
+}
+input[type=checkbox]:checked{
+    background:url("../Images/public/little_close.png");
+    -webkit-background-size:100%;
+    background-size:100%;
+    height:80px;
+    width:80px;
+}
+.divHeader{
+    width: 100%;
+    height: 165px;
+    line-height: 200px;
+    bottom: 0;
+    clear:both;
+}
+.divFooter{
+    background: black;
+    width: 100%;
+    height: 200px;
+    line-height: 200px;
+    margin-bottom: 0px;
+}
+.divFooter li .p1{
+    color: indianred;
+    font-size: 40px;
+    font-family: 微软雅黑;
+    float: left;
+}
+.divFooter li .p2{
+    color: darkgrey;
+    font-size: 40px;
+    font-family: 微软雅黑;
+    float: left;
+}

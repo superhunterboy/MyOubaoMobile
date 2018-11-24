@@ -1,0 +1,26 @@
+<html>
+<head></head>
+<body>
+	<div id="getLoginUserMonetaryInfo"></div>
+</body>
+<script>
+	$.ajax({
+		url: "{{ route('users.user-monetary-info') }}",
+		type: 'GET',
+		dataType: 'json',
+		data: {},
+	})
+	.done(function(data) {
+		$('#getLoginUserMonetaryInfo').html(data['data']);
+		console.log("success");
+	})
+	.fail(function(data) {
+		console.log("error");
+	})
+	.always(function(data) {
+		console.log("complete");
+	});
+
+
+</script>
+</html>

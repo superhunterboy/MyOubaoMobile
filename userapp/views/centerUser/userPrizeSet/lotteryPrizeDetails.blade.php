@@ -1,0 +1,1 @@
+@include('centerUser.userPrizeSet.lotteryPrizeSet')

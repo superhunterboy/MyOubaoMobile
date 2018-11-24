@@ -1,0 +1,401 @@
+@import 'common.scss';
+
+$gap: 15px;
+// ds-form
+.ds-form{
+  margin-bottom: $gap;
+  @at-root .ds-form-group{
+    background-color: #fff;
+    border-top: 1px solid $cBorderLight;
+    border-bottom: 1px solid $cBorderLight;
+    margin-top: $gap;
+    padding: 10px 3%;
+    >label,>input,>span,>div,>img,>a,
+    >textarea,>select,{
+      display: inline-block;
+    }
+    label{
+      color: #525253;
+      min-width: 25%;
+      text-align: right;
+      font-size: 16px;
+      @include max-screen(360px){
+        font-size: 14px;
+      }
+      line-height: 1.5;
+      font-weight: normal;
+      margin-bottom: 0;
+      margin-right: 10px;
+    }
+    input{
+      border: none;
+      background-color: transparent;
+      outline: none;
+      width: 60%;
+      font-size: 14px;
+      line-height: 16/14 * 1.5;
+    }
+    .table{
+      margin-bottom: 0;
+      td{
+        padding: 4px;
+        border: none;
+      }
+      th{
+        padding: 4px;
+        white-space: nowrap;
+      }
+    }
+    .dropdown-menu{
+      max-height: 300px;
+      overflow-y: auto;
+    }
+  }
+  @at-root .ds-form-captcha{
+    input{
+      width: 35%;
+    }
+    [data-captcha]{
+      @include max-screen(360px) {
+        &{
+          width: 30%;
+        }
+      }
+    }
+  }
+  @at-root .ds-form-info, .ds-form-title, .ds-form-button{
+    padding: 0 10px;
+    margin-top: $gap;
+    line-height: 2;
+  }
+  @at-root .ds-form-info{
+    text-align: center;
+    font-size: 14px;
+    line-height: 1.5;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+  @at-root .ds-form-info-top{
+    margin-bottom: -$gap;
+  }
+  @at-root .ds-form-info-bottom{
+    margin-top: 0;
+  }
+  @at-root .ds-form-title{
+    font-size: 16px;
+    color: $cGrayDark;
+    margin-bottom: -$gap;
+  }
+}
+.ds-form-prompt{
+  padding: $gap;
+  +div{
+    margin-top: 0;
+  }
+}
+
+// 游戏／追号记录
+.record-table{
+  .table{
+    margin-bottom: 0;
+    th{
+      white-space: nowrap;
+    }
+    td{
+      vertical-align: middle;
+      .label{
+        padding:0 2px;
+        font-weight: 200;
+        background-color: $cLight;
+      }
+      &.text-left{
+        text-align: left;
+      }
+    }
+  }
+}
+
+// 表单信息状态提示
+.form-status-tips{
+  padding: 10% 5%;
+  text-align: center;
+  font-size: 18px;
+  color: #a0a0a3;
+  line-height: 1.5;
+  .glyphicon{
+    font-size: 80px;
+    color: #0eb9c4;
+    font-weight: 100;
+  }
+}
+
+// 银行卡列表
+.card-detail{
+  display: block;
+  border-top: 1px dashed $cBorder;
+  margin-top: 0;
+  margin-bottom: 5px;
+  padding-top: 5px;
+  &:first-child{
+    border-top: none;
+    padding-top: 0;
+  }
+  &:last-child{
+    margin-bottom: 0;
+  }
+  .media-left{
+    width: 20%;
+    height: 0;
+    padding-bottom: 18.8vw; // 20 * (1 - .03*2)
+    margin-right: 10px;
+  }
+  .media-body{
+    padding: 0 10px;
+    h3{
+      font-size: 18px;
+      margin-top: 0;
+    }
+    p{
+      margin-bottom: 0;
+    }
+    a{
+      color: #0eb9c4;
+      padding-left: 10px;
+      margin-left: 10px;
+      border-left: 1px solid $cBorder;
+      text-decoration: none;
+    }
+  }
+  .media-right .glyphicon{
+    color: $cHighlight;
+    opacity: 0;
+  }
+  &.card-checked{
+    .media-right .glyphicon{
+      opacity: 1;
+    }
+  }
+}
+
+// 银行卡信息
+.card-show{
+  display: block;
+  h3{
+    font-size: 16px;
+    margin-top: 0;
+    .bank-icon-box{
+      width: 6%;
+      padding-bottom: 5.64vw;
+      position: relative;
+      display: inline-block;
+    }
+    >*{
+      vertical-align: middle;
+    }
+  }
+  p{
+    margin-bottom: 0;
+    font-size: 18px;
+  }
+}
+
+.bank-icon-box{
+  position: relative;
+}
+// 银行图标
+$bankIcons: (
+  icbc  : '中国工商银行',
+  ccb   : '中国建设银行',
+  abc   : '中国农业银行',
+  boc   : '中国银行',
+  cmb   : '招商银行',
+  bcom  : '交通银行',
+  cmbc  : '中国民生银行',
+  ecitic: '中信银行',
+  spdb  : '上海浦东发展银行',
+  pab   : '平安银行',
+  cib   : '兴业银行',
+  hxb   : '华夏银行',
+  cebb  : '中国光大银行',
+  psbc  : '中国邮政储蓄银行'
+);
+[class|='bank-icon']{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: block;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+@each $icon, $bank in $bankIcons {
+  $svg : $svgPath + 'banks/' + $icon + '.svg';
+  .bank-icon-#{$icon} {
+    background-image: url($svg);
+  }
+}
+
+
+/*
+** 注单
+*/
+.game-order{
+  @at-root .order-top{
+    padding: 10px 2%;
+    background-color: $bgColor1;
+    box-shadow: 0 0 10px rgba($cLightDark, .45);
+    .game-icon-box{
+      position: relative;
+      width: 20%;
+      height: 0;
+      padding-bottom: (19.2 * 8 / 11) + vw; // 96% * 20% * 100 * ( 8 / 11)
+      >img{
+        position: absolute;
+        width: 100%;
+      }
+    }
+    .media-body{
+      padding-left: 10px;
+      h3{
+        margin-top: 0;
+        color: $cLightDark;
+        white-space: nowrap;
+        font-size: 18px;
+        @include max-screen(360px) {
+          &{
+            font-size: 16px;
+          }
+        }
+        @include max-screen(320px) {
+          &{
+            font-size: 14px;
+          }
+        }
+        small{
+          font-size: 80%;
+          padding-left: 2px;
+          span{
+            font-family: $fontCode;
+            padding: 0 4px;
+          }
+        }
+      }
+      p{
+        margin-bottom: 0;
+        font-size: 14px;
+        dnf{
+          font-family: $fontCode;
+        }
+      }
+    }
+    .media-right{
+      white-space: nowrap;
+      font-size: 12px;
+    }
+  }
+  @at-root .order-detail{
+    list-style: none;
+    padding: 10px 0;
+    li{
+      color: $cGray;
+      padding: 5px 5%;
+      border-top: 1px dashed $cBorder;
+      &:first-child{
+        border-top: none;
+      }
+      label{
+        margin-bottom: 0;
+        width: 22%;
+        font-weight: normal;
+        color: $cGrayDark;
+      }
+    }
+  }
+  @at-root .lottery-detail-textarea{
+    display: block;
+    margin-top: 5px;
+    font-family: $fontCode;
+  }
+}
+
+.funds-detail-tabs .table>tbody>tr>td{
+  vertical-align: middle;
+  color: $cLightDark;
+  >small{
+    color: $cGray;
+  }
+}
+
+.article-content{
+  padding: $gap;
+  .article-page-title{
+    margin-bottom: $gap;
+    border-bottom: 1px solid $cBorder;
+    h2{
+      margin-top: 0;
+      font-size: 18px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      @include max-screen(360px){
+        &{
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}
+
+.form-submit-callback{
+  padding: $gap;
+  h2{
+    font-size: 22px;
+  }
+  .glyphicon{
+    font-size: 50px;
+    font-weight: 100;
+  }
+  .glyphicon-ok-circle{
+    color: #0eb9c4;
+  }
+  .glyphicon-remove-circle{
+    color: $cHighlight;
+  }
+}
+
+.ds-share{
+  width: 100%;
+  padding: 0 4%;
+  margin: 20px auto;
+  text-align: center;
+  >*{
+    margin-bottom: 10px;
+  }
+  h3{
+    font-size: 14px;
+    margin: 0 0 10px;
+    line-height: 2;
+    color: $cGrayDark;
+  }
+  @at-root .ds-share-img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    max-width: 100%;
+    border-radius: 4px;
+    border: 1px solid $cBorder;
+  }
+  @at-root .ds-share-url{
+    textarea{
+      width: 100%;
+      padding: 5px;
+      border-radius: 4px;
+      border: 1px solid $cBorder;
+      text-align: left;
+      font-size: 12px;
+      word-break: break-all;
+      background-color: $bgColor1;
+    }
+  }
+}
+

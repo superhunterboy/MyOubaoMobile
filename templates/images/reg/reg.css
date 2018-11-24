@@ -1,0 +1,153 @@
+body{background-color: #fff;}
+/*#reg-content .wrap-inner{width: 1000px;}*/
+/*#header .top-account{display:none;}*/
+
+.submenu{background-color:#fff;border:1px solid #dfdfdf;border-radius:3px;position:absolute;right:0;top:36px;width:98px;padding:5px 0;display:none;}
+.submenu a{display:block;color:#666;text-align:center;font-size:12px;line-height:30px;}
+.submenu a:hover{background-color:#ff7508;color:#fff;}
+
+.slogan-text{padding:15px;text-align:center;margin:15px auto;line-height:40px;}
+.slogan-text h2,
+.slogan-text p{display:inline-block;*display:inline;*zoom:1;}
+.slogan-text h2{margin-right:10px;}
+
+.reg-wrap{border:1px solid #dfdfdf;position:relative;}
+.reg-nav{width:120px;position:absolute;top:0;left:0;}
+.reg-nav ul{}
+.reg-nav li{text-align:center;padding:10px 0;cursor:default;}
+.reg-nav li.active{color:#fd8a07;}
+.reg-nav li.active{background-color:#fff;}
+.reg-nav li i{background-image:url(icons.png);background-repeat:no-repeat;width:40px;height:40px;display:block;margin:0 auto;}
+.reg-nav .active i{background-image:url(icons_hover.png);}
+.reg-nav .avatar i {background-position:0 0;}
+.reg-nav .account i{background-position:-40px 0;}
+.reg-nav .email i  {background-position:-80px 0;}
+.reg-nav li span{line-height:24px;font-size:14px;}
+
+.reg-box{border-left:120px solid #dfdfdf;background:#fff;padding:10px 25px;}
+
+.form-text{padding:15px 0;padding-left:60px;line-height:50px}
+.form-text h2,
+.form-text p{display:inline-block;*display:inline;*zoom:1;vertical-align:top;margin-right:5px;}
+
+.form-ul{}
+.form-ul li{margin-bottom:15px;position:relative;
+	font-size:0;/* 所有浏览器 */
+    letter-spacing:-5px;/* Safari 等不支持字体大小为 0 的浏览器 */
+    *letter-spacing:normal;
+    word-spacing:-1px;/* IE6、7 */
+}
+.form-ul li label,
+.form-ul li .input,
+.form-ul li span,
+.avatar-show,.avatar-list,
+.avatar-list a,
+.input-group{display:inline-block;*display:inline;*zoom:1;vertical-align:top;
+	font-size: 12px;
+    letter-spacing: normal;
+    word-spacing: normal;
+}
+.form-ul li label{width:80px;padding-left:60px;line-height:30px;font-size:14px;}
+.form-ul li span{line-height:32px;}
+.avatar-show{width:100px;height:100px;padding:5px;border-radius:50%;border:1px solid #fe4e00;margin-right:20px;}
+.avatar-list{height:112px;}
+.avatar-list a{width:60px;height:60px;padding:5px;border-radius:50%;border:1px solid #dfdfdf;position:relative;background-color:#fff;}
+.avatar-show img,
+.avatar-list a img{display:block;max-width:100%;border-radius:50%;}
+.avatar-list a.active{border-color:#32b89f;}
+.avatar-list a span{background-image:url(checked-icons.png);background-repeat:no-repeat;width:20px;height:20px;position:absolute;left:50%;margin-left:-10px;bottom:-30px;}
+.avatar-list a.active span{background-position:0 -20px;}
+
+.input-group{position:relative;width:234px;margin-right:20px;z-index:2;}
+.vcode-li .input-group{width:108px;margin-right:0}
+.form-ul .input {border:1px solid #c3c3c3;border-radius:3px;height:20px;line-height:20px;padding:5px;width:200px;background:#FFF url(ico-user.png) no-repeat 4px 5px;padding-left:27px;font-size:14px;}
+.fundpassword-li .input,
+.password-li .input  {background-image:url(ico-lock.png);}
+.repassword-li .input{background-image:url(ico-right.png);}
+.email-li .input     {background-image:url(ico-msg.png);}
+.vcode-li .input     {background-image:url(ico-safe.png);width:74px;}
+/*.password-text{position:absolute;left:0;top:0;display:none;}*/
+
+.form-ul li .ui-text-prompt{position:absolute;left:250px;top:0;border:1px solid #f5aeae;background-color:#ffeded;color:#fa7171;padding:0 5px;line-height:28px!important;border-radius:3px;display:none;text-align:center;white-space:nowrap;}
+.ui-text-prompt:before,
+.ui-text-prompt:after{
+	content: '';
+	border: 5px solid transparent;
+	border-right-color: #f5aeae;
+	width: 0;
+	height: 0;
+	position: absolute;
+	top: 10px;
+	left: -10px;
+	z-index: 1;
+}
+.ui-text-prompt:before{
+	z-index: 2;
+	border-right-color: #ffeded;	
+	left: -9px;
+}
+.form-ul li .ico-right{position:absolute;width:20px;height:20px;font-size:0;overflow:hidden;background:url(ico-right.gif) center center no-repeat;right:-25px;top:5px;display:none;}
+
+.space-li{border-top:1px solid #dfdfdf;padding-top:30px;margin-top:30px;}
+
+.reg-tip {padding:8px;background:#FFF;border:1px dashed #CCC4B9;/*width:460px;*/color:#877e69;line-height:180%;border-radius:3px;}
+
+.button-li button{
+	width: 234px;
+	line-height: 40px;
+	background-color: #0eb9c4;
+	border: none;
+	color: #fefefe;
+	font-size: 14px;
+	letter-spacing: 5px;
+	border-radius: 4px;
+	cursor: pointer;
+	outline: none;
+}
+.button-li button:active{
+	box-shadow: inset 1px 2px 6px rgba(19,115,100,0.5);
+}
+.button-li button:hover{
+	background-color: #10c9d5;
+}
+
+
+/*.reg-box .row {margin-top:10px;color:#3c3c3c;}
+.reg-box .row-mail {margin-top:40px;}
+.reg-box .row-title {height:27px;line-height:27px;font-size:14px;}
+.reg-box .row-password {position:relative;}*/
+.show-password{position:absolute;right:10px;top:6px;width:20px;height:20px;background-image:url(scan.png);background-repeat:no-repeat;cursor:pointer;}
+.show-password.active{background-position:0 -20px;}
+.reg-box .reg-input-password-hidden {position:absolute;width:240px;height:24px;left:28px;top:3px;font-size:14px;border:none;display:none;outline:none;}
+
+.reg-box .row-feild {position:relative;}
+.reg-box .row-feild .ico-right {position:absolute;width:17px;height:17px;font-size:0;overflow:hidden;background:url(ico-right.gif) no-repeat;left:308px;top:8px;display:none;}
+.reg-box .row-feild-password .ico-right {left:256px;}
+.reg-box .row-feild-vcode .ico-right {left:157px;}
+
+.reg-box .feild-tip {font-size:12px;color:#908267;padding:0 0 0 10px;display:none;}
+.reg-box .feild-tip-text {position:absolute;}
+.reg-box .feild-static-tip {padding:0 10px 0 10px;color:#ada99f;display:none;}
+.reg-img-vcode {position:absolute;margin-left:10px; cursor:pointer;}
+.reg-button-submit {background:#f2f2fc;width: 550px; font-size: 30px; height: 50px; line-height: 50px;}
+
+.reg-box .ico-warning,.reg-box .ico-error {display:inline-block;width:14px;height:16px;overflow:hidden;background:url(ico-warning.gif) no-repeat 0 3px;padding:0 4px 0 0}
+.reg-box .ico-error {background-image:url(ico-error.gif)}
+
+
+/** result page **/
+.alert{
+	width: 600px;
+	border-radius: 3px;
+	border: none;
+	background-color: transparent;
+	margin-top: 0;
+}
+.reg-result{
+	padding: 200px 50px;
+}
+
+/* 找回密码 */
+.findpassword-box{border-left:none;}
+.findpassword-wrap{margin:30px auto;}
+.findpassword-wrap .form-ul li label{width:100px;}

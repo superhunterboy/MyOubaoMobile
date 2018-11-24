@@ -1,0 +1,121 @@
+
+/* Eric Meyer's Reset CSS v2.0 - http://cssreset.com */
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{border:0;font-size:100%;font-family:"Helvetica Neue","Hiragino Sans GB","Microsoft Yahei",sans-serif,arial;vertical-align:baseline;margin:0;padding:0}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:none}table{border-collapse:collapse;border-spacing:0}
+body{
+	color: #404565;
+	background: url(images/bg-repeat.png) repeat;
+	background-color: #333;
+	font-size: 12px;
+	line-height: 1.5;
+	font-family: "Helvetica Neue","Hiragino Sans GB","Microsoft Yahei",sans-serif,arial;
+	overflow-x:hidden;
+}
+/* button */
+.button{
+	display:inline-block;
+	*display:inline;
+	*zoom:1;
+	width: 150px;
+	line-height: 30px;
+	padding: 4px 0;
+	border: none;
+	background-color:#ff3e22;
+	border-radius:30px;
+	text-align:center;
+	color:#fff;
+	font-size:16px;
+	cursor: pointer;
+	outline: none;
+}
+.button:hover{
+	background-color:#f62;
+	color:#fff;
+}
+.wrap{
+	width: 600px;
+	height: 600px;
+	margin: 0 auto;
+	position: relative;
+}
+h1{
+	font-size: 28px;
+	line-height: 64px;
+	text-align: center;
+}
+.c-red{color: #404565!important;}
+h1 em{color: #ff3e22;font-style: normal;}
+
+.step{
+	height: 30px;
+	width: 100%;
+	padding-top: 80px;
+	background-repeat: no-repeat;
+}
+.step1{background-image: url(images/step1.png);}
+.step2{background-image: url(images/step2.png);}
+.step3{background-image: url(images/step3.png);}
+.step p{line-height: 36px;text-align: center;}
+
+.cont{min-height: 310px; _height: auto;}
+.loading{
+	padding-top: 50px;
+	line-height: 30px;
+	text-align: center;
+}
+
+.form-ul{padding: 10px 0;}
+.form-ul li{padding-bottom: 5px;}
+.form-ul label,
+.form-ul input,
+.form-ul span,
+.form-ul select,
+.form-ul .file-btn{
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	line-height: 34px;
+	vertical-align: middle;
+	color: #404565;
+}
+.form-ul label{width: 260px;text-align: right;}
+.form-ul input{width: 170px; line-height: 14px;padding: 8px 5px;border: 1px solid #b8bacc;}
+.form-ul select{width: 180px;}
+.form-ul .small-select{width: 90px;}
+.file-btn{width: 100px;line-height: 34px;border: 1px solid #b8bacc;text-align: center;border-radius: 3px;cursor: pointer;letter-spacing: 2px;
+	background-color:#c8cae0;
+	background-image:-webkit-gradient(linear, left top, left bottom, from(#fff), to(#c8cae0) );
+	background-image:-moz-linear-gradient( top, #fff, #c8cae0 );
+	filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#fff', endColorstr='#c8cae0');
+}
+.form-ul .img-code{display: block; cursor: pointer;}
+.form-ul .button-li{text-align: center;padding-top: 20px;}
+.form-ul .vcode-li input{width: 90px;}
+.form-ul .button-li .button span{color: #fff;}
+
+.form-tips{
+	background: url(images/tip-bg.png) center top no-repeat;
+	padding: 10px 30px;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+}
+.form-tips h2{font-size: 14px; color: #505780; text-align: center; font-weight: normal; line-height: 30px;}
+
+.result{text-align: center;padding-top: 40px;}
+.result p{line-height: 30px;font-size: 14px;}
+.result p.small{font-size: 12px;}
+.result-status{	
+	display: inline-block;
+	*display: inline;
+	*zoom: 1;
+	width: 118px;
+	height: 118px;
+	background-repeat: no-repeat;
+	margin-bottom: 25px;
+}
+.status-success{background-image: url(images/status-success.png);}
+.status-error{background-image: url(images/status-error.png);}
+.status-sorry{background-image: url(images/status-sorry.png);}
+
+.back{line-height: 50px;}
+.back a{color: #404565;}

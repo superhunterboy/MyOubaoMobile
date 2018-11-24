@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>大圣游戏 - 再赢一次</title>
+<link rel="stylesheet" href="css/css.css">
+</head>
+<body>
+
+<div class="banner">
+	<h1 class="seo-txt">大圣游戏 - 再赢一次</h1>
+	<p class="seo-txt">假如上天 再给你一次机会 你是否 会放下过去 与大圣一起踏上取金之旅</p>
+</div>
+
+<div class="content">
+	<div class="section section_1">
+		<h2>取真金就来大圣游戏</h2>
+		<div class="bg"></div>
+		<div class="cont">
+			<p>目前为止已有<span class="number" data-animation-number="47625">0</span>位施主报名取金</p>
+			<p>立刻加入取金行列，即送百元礼金～</p>
+		</div>
+		<div class="button">
+			<a href="" data-subscribe>预约</a>
+		</div>
+	</div>
+	<div class="section section_2">
+		<h2>如何领取礼金</h2>
+		<div class="cont"></div>
+	</div>
+	<div class="section section_3">
+		<h2>关注大圣游戏</h2>
+		<div class="cont">
+			<p>大圣游戏（MKG888.com）是亚洲最佳精品在线游戏平台，于2015年由新加坡著名集团天庭互动与菲律宾在线游戏巨头共同斥重金打造，志在改善亚洲用户购彩体验，让您再赢一次！</p>
+			<p>大圣游戏尊享欧亚双重牌照，并经Gaming Laboratories International（GLI）权威认证，推崇“用户至上，体验为王，诚信为本”的经营理念。</p>
+			<p>我们的使命和理念是完美主义的工匠精神，打造用户体验一流的亚洲在线游戏娱乐平台，彻底改善用户的游戏体验。</p>
+		</div>
+		<div class="qr"></div>
+		<div class="button">
+			<p>收听大圣游戏官方微信微博，即可全面掌握取金动态～ </p>
+			<a href="" class="link1">新浪微博</a>
+			<a href="" class="link2">腾讯微博</a>
+			<a href="" class="link3">Facebook</a>
+		</div>
+	</div>
+</div>
+
+<div class="shade-left"></div>
+<div class="shade-right"></div>
+
+<div class="footer">
+	<div class="cont">
+		<p>Website copyright © 2014 – 2015 DSgame INC. ALL RIGHTS RESERVED.</p>
+		<p>© 2012 Genting Palace Interactive Network Technology Co., Ltd. All Rights Reserved.  大圣游戏版权所有</p>
+	</div>
+</div>
+
+<div class="dialog" id="subscribe" >
+	<span class="close" data-action="close" title="关闭">&times;</span>
+	<div class="dialog-body">
+		<h2>与大圣一起踏上取金之旅</h2>
+		<p class="form-desc">请施主留下您的联系方式，待大圣破石而出之时，定会带着礼金邀您一同踏上赢取真金之路～</p>
+		<ul class="form-ul">
+			<li>
+				<label>施主法号：</label>
+				<input type="text" name="name">
+			</li>
+			<li>
+				<label>QQ号：</label>
+				<input type="text" name="qq">
+			</li>
+			<li>
+				<label>邮箱：</label>
+				<input type="email" name="email">
+			</li>
+			<li class="form-ul-button">
+				<label>&nbsp;</label>
+				<button data-action="submit" type="submit"><span>确认提交</span></button>
+			</li>
+		</ul>
+	</div>
+	<div class="dialog-foot">
+		<div class="dialog-info">
+			<h3>为什么要我留下联系方式？</h3>
+			<ol>
+				<li>我们将会为预约取金资格的施主提供100元礼金；</li>
+				<li>填写您的联系方式以便我们的产品上线后及时通知您；</li>
+				<li>我们将发送礼金兑换卷到您的邮箱，请务必填写您常用的邮箱。</li>
+			</ol>
+		</div>
+	</div>
+</div>
+
+<div class="overlay" data-dialog="close"></div>
+
+<script src="js/jquery-1.9.1.min.js"></script>
+<script src="js/jquery.inview.min.js"></script>
+<script src="js/jquery.animateNumber.min.js"></script>
+<script>
+$(function(){
+
+	$('body').on('inview', '[data-animation-number]', function(){
+		var $this = $(this);
+
+		var number = $this.data('animation-number'),
+			options = {
+				number: number,
+				easing: 'easeInQuad',
+				numberStep: $.animateNumber.numberStepFactories.separator(',')
+			};
+
+		$this.animateNumber(options, 1000);
+	});
+
+	var $overlay = $('.overlay').fadeOut(0),
+		$dialog = $('#subscribe').fadeOut(0);
+
+	$('[data-subscribe]').on('click', function(e){
+		e.preventDefault();
+		$overlay.fadeIn();
+		$dialog.fadeIn();
+	});
+
+	$dialog.find('[data-action="close"]').add( $('[data-dialog="close"]') ).on('click', function(e){
+		e.preventDefault();
+		$overlay.fadeOut();
+		$dialog.fadeOut();
+	});
+
+
+	$('[data-action="submit"]').on('click', function(e){
+		e.preventDefault();
+		// 验证表单
+
+	});
+});
+</script>
+
+</body>
+</html>

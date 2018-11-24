@@ -1,0 +1,20 @@
+<?php
+return array (
+  'account' => '卡号',
+  'account_name' => '账户名',
+  'bank' => '银行',
+  'black list' => '不良记录',
+  'branch' => '支行名称',
+  'branch_address' => '支行地址',
+  'city' => '市',
+  'created_at' => '创建时间',
+  'created_at_from' => '时间 从',
+  'created_at_to' => '至',
+  'deleted' => '已删除',
+  'in use' => '使用中',
+  'not in use' => '未使用',
+  'note' => '备注',
+  'province' => '省',
+  'status' => '状态',
+  'updated_at' => '更新时间',
+);

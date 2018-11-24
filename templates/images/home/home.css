@@ -1,0 +1,183 @@
+/* wrap && wrap-inner*/
+body{color:#666;}
+.wrap{width:100%;position:relative;clear:both;}
+.wrap-inner{width:1000px;margin:0 auto;clear:both;position:relative;}
+.wrap-inner:after{content:' ';visibility:hidden;display:block;height:0;clear:both;}
+/*.logo{background-image:url(logo.png);width:230px;height:80px;}*/
+.tag{padding:0 2px;border-radius:2px;color:#fff;background-color:#5e5f65;}
+.tag-orange{background-color:#ff8400;}
+
+/* button */
+.button{display:inline-block;*display:inline;*zoom:1;background-color:#e6e6e6;border:1px solid #dfdfdf;border-radius:3px;text-align:center;color:#666;font-size:12px;padding:0 5px;}
+.button:hover{background-color:#f7f7f7;color:#808080;}
+
+/* #top-bar */
+#top-bar{background-color:#5e5f65;height:36px;color:#fff;}
+.gtm-time{padding:8px;line-height:20px;}
+.tb-links{padding-top:6px;}
+.tb-links a{float:left;display:inline;line-height:24px;margin-right:6px;width:90px;text-align:center;}
+.login-button{color:#494949;background-color:#ffd800;border-radius:3px;font-size:12px;}
+.login-button:hover{background-color:#ffd800;}
+.tb-links .service{background:url(kf-icon.png) left center no-repeat;padding-left:24px;width:60px;color:#fff;margin-left:20px;}
+
+/* #header */
+#header{height:80px;background:#fff;box-shadow:none;border:none;padding:5px 0;}
+.menu{font-weight:normal;padding-top:20px;}
+.menu li{width:80px;padding:0 30px;text-align:center;border-left:1px solid #e7e7e7;float:left;}
+.menu li:first-child{border-left:none;}
+.menu li:last-child{padding-right:0;}
+.menu li a{color:#666;line-height:40px;display:block;font-size:16px;}
+.menu .active a{color:#ff4200;}
+.logo,#logo{margin:5px 0 0;}
+
+/* #banner */
+#banner{position:relative;min-width:1000px;width:auto;_width:100%;min-height:280px;height:auto;_height:auto;}
+.cycle-slideshow a{display:block;width:100%;}
+.cycle-slideshow a img{display:block;width:100%;max-width:100%;}
+.cycle-prev,.cycle-next{z-index:200;position:absolute;top:50%;width:50px;height:80px;margin-top:-40px;cursor:pointer;opacity:.5;filter:alpha(opacity=50);text-indent:-9999px;}
+.cycle-prev{left:60px;background:url(prev.png);}
+.cycle-next{right:60px;background:url(next.png);}
+.cycle-prev:hover,.cycle-next:hover{opacity:1;filter:alpha(opacity=100);}
+.cycle-pager{position:absolute;width:100%;bottom:10px;text-align:center;z-index:200;height:20px;overflow:hidden;}
+.cycle-pager span{display:inline-block;*display:inline;*zoom:1;width:10px;height:10px;text-indent:-9999px;background-color:#ccd1d9;border-radius:5px;overflow:hidden;margin:0 2px;}
+.cycle-pager .cycle-pager-active{background-color:#7a7a7a;}
+
+/*home custom-pager*/
+.custom-pager{height:65px;bottom:-33px;}
+.custom-pager span{width:56px;margin:0 10px;height:100%;background-color:transparent!important;background-image:url(home-pager.png);cursor:pointer;}
+.custom-pager span:hover,
+.custom-pager .cycle-pager-active{background-image:url(home-pager-active.png);}
+.custom-pager-1{background-position:0 0;}
+.custom-pager-2{background-position:-56px 0;}
+.custom-pager-3{background-position:-112px 0;}
+.custom-pager-4{background-position:-168px 0;}
+.custom-pager-5{background-position:-224px 0;}
+
+/* #main-content */
+.incantation{line-height:40px;padding:40px 0;text-align:center;font-size:22px;}
+.incantation strong{color:#ff6437;font-weight:normal;padding:0 10px;}
+/*feature*/
+.feature{}
+.feature li{width:280px;float:left;padding:0 40px;position:relative;}
+.feature .ft-1{padding-left:0;}
+.feature .ft-2{}
+.feature .ft-3{padding-right:0;}
+.feature .ft-2:before,.feature .ft-2:after{content:'';height:95%;width:0;border-left:1px solid #e3e3e3;position:absolute;top:0;}
+.feature .ft-2:before{left:0;}
+.feature .ft-2:after{right:0;}
+.ft-icon-bg{position:absolute;background-repeat:no-repeat;}
+.ft-1 .ft-icon-bg{width:138px;height:76px;left:-15px;top:-5px;background-image:url(f-b-1.jpg);}
+.ft-2 .ft-icon-bg{width:82px;height:82px;left:30px;top:-5px;background-image:url(f-b-2.jpg);}
+.ft-3 .ft-icon-bg{width:146px;height:130px;left:20px;top:-20px;background-image:url(f-b-3.jpg);}
+.ft-1 .ft-icon{width:75px;height:50px;position:absolute;left:31px;top:14px;background-image:url(ft-icon-1.png);}
+.ft-2 .ft-icon{width:50px;height:105px;position:absolute;left:53px;top:16px;background-image:url(ft-icon-2.png);}
+.ft-3 .ft-icon{width:53px;height:52px;position:absolute;left:44px;top:39px;background-image:url(ft-icon-3.png);}
+.ft-title{padding-left:130px;height:140px;}
+.ft-title h2{color:#333;font-size:22px;font-weight:normal;line-height:30px;}
+.ft-title p{font-size:16px;color:#999;}
+.ft-show{font-size:12px;color:#999;position:relative;}
+.ft-show h3{font-size:16px;color:#666;font-weight:normal;}
+.ft-show h4{font-size:14px;font-weight:normal;position:absolute;right:0;top:20px;}
+.ft-show h4 strong{font-weight:normal;font-size:22px;color:#ff4200;padding-right:5px;}
+.ft-percent{width:100%;height:6px;border-radius:4px;background-color:#ebebeb;position:relative;margin:10px 0 20px 0;}
+.ft-percent-real{border-radius:4px;background-color:#ff4200;width:1px;position:absolute;left:0;top:0;height:100%;}
+
+.icon-list{padding-top:10px;}
+.icon-list li{display:inline-block;*display:inline;*zoom:1;width:20px;height:20px;margin-right:6px;padding:5px;border-radius:4px;border:1px solid #dfdfdf;background-color:#fff;}
+.icon-list li span{background-image:url(icons.png);background-repeat:no-repeat;width:20px;height:20px;margin:0 auto;display:block;}
+.integrity-icons .ui-icon-1 span{background-position:0 0;}
+.integrity-icons .ui-icon-2 span{background-position:-20px 0;}
+.integrity-icons .ui-icon-3 span{background-position:-40px 0;}
+.integrity-icons .ui-icon-4 span{background-position:-60px 0;}
+.integrity-icons .ui-icon-5 span{background-position:-80px 0;}
+.integrity-icons .ui-icon-6 span{background-position:-100px 0;}
+.integrity-icons .ui-icon-7 span{background-position:-120px 0;}
+.bank-icons .ui-icon-1 span{background-position:0 -20px;}
+.bank-icons .ui-icon-2 span{background-position:-20px -20px;}
+.bank-icons .ui-icon-3 span{background-position:-40px -20px;}
+.bank-icons .ui-icon-4 span{background-position:-60px -20px;}
+.bank-icons .ui-icon-5 span{background-position:-80px -20px;}
+.bank-icons .ui-icon-6 span{background-position:-100px -20px;}
+.bank-icons .ui-icon-7 span{background-position:-120px -20px;}
+.safety-icons .ui-icon-1 span{background-position:0 -40px;}
+.safety-icons .ui-icon-2 span{background-position:-20px -40px;}
+.safety-icons .ui-icon-3 span{background-position:-40px -40px;}
+.safety-icons .ui-icon-4 span{background-position:-60px -40px;}
+.safety-icons .ui-icon-5 span{background-position:-80px -40px;}
+.safety-icons .ui-icon-6 span{background-position:-100px -40px;}
+.safety-icons .ui-icon-7 span{background-position:-120px -40px;}
+
+/*intro*/
+.intro{margin-top:60px;}
+.intro li{width:300px;float:left;padding:0 25px 20px;position:relative;}
+.intro .about{padding-left:0;}
+.intro .tools{padding-right:0;}
+.intro h2,.intro h3,.intro h4{font-weight:normal;}
+.intro h3{color:#cfcfcf;font-size:12px;}
+.intro-detail{padding-right:20px;height:180px;height:120px;margin-top:20px;position:relative;background-repeat:no-repeat;}
+.partner .intro-detail{background-image:url(partner.png);}
+.tools .intro-detail{background-image:url(tools.png);}
+.intro .more-button{padding:4px 15px;margin-top:10px;}
+.intro .download-button{position:absolute;right:70px;top:147px;display:none;}
+
+/*contact*/
+#contact{background-color:#ebebeb;margin-top:20px;}
+#contact li{width:300px;float:left;padding:20px 25px;position:relative;text-align:center;}
+#contact .phone{padding-left:0;}
+#contact .message{padding-right:0;}
+#contact h2,#contact h3,#contact h4{font-weight:normal;}
+#contact h2{color:#666;margin-top:5px;line-height:30px;}
+#contact .icons{width:62px;height:62px;display:block;background-image:url(contact-icons.png);background-repeat:no-repeat;margin:0 auto;text-indent:-9999em;}
+#contact .phone .icons{background-position:0 0;}
+#contact .online .icons{background-position:-62px 0;}
+#contact .message .icons{background-position:-124px 0;}
+#contact li:hover .icons{
+	-webkit-animation: scale .8s linear 0s infinite alternate;
+	animation        : scale .8s linear 0s infinite alternate;
+}
+
+.ability-content+#contact,
+.about-content+#contact{margin-top:0;}
+
+/** 二级页-何方圣神 **/
+.about-content{}
+.about-1{background:#e8ebef url(about-1.jpg) center bottom no-repeat;height:584px;width:100%;}
+.about-2{background:#ffae00 url(about-2-bg.png) left bottom repeat-x;height:590px;}
+.about-3{background:#0297db;height:570px;}
+.about-content .wrap-inner{height:100%;}
+.about-content .wrap-inner img{position:absolute;width:1000px;left:0;}
+.about-1 .wrap-inner img{}
+.about-2 .wrap-inner img{top:123px;}
+.about-3 .wrap-inner img{width:1200px;height:460px;;left:-100px;top:60px;}
+/** 二级页-本领高强 **/
+.ability-content{}
+.ability-1{background:#067ed4 url(ability_bg_1.png) left bottom repeat-x;height:580px;}
+.ability-2{background:#2fb8d9 url(ability_bg_2.png) left bottom repeat-x;height:600px;}
+.ability-3{background:#72b804 url(ability_bg_3.png) left bottom repeat-x;height:580px;}
+.ability-4{background:#f2f3f5;height:540px;}
+.ability-content .wrap-inner{height:100%;}
+.ability-content .wrap-inner img{position:absolute;width:1000px;left:0;}
+.ability-1 .wrap-inner img{}
+.ability-2 .wrap-inner img{width:1200px;left:-120px;top:20px;}
+.ability-3 .wrap-inner img{top:75px;}
+.ability-4 .wrap-inner img{top:60px;}
+
+/* foot-banner */
+#foot-banner{background-color:#5e5f65;padding:40px 0;}
+.shortcuts{width:550px;margin-left:20px;}
+.shortcuts li{width:110px;float:left;}
+.shortcuts li h2{font-weight:normal;font-size:14px;color:#fff;margin-bottom:10px;}
+.shortcuts a{display:block;width:100%;color:#c3c3c3;line-height:24px;font-size:12px;}
+.shortcuts a:hover{color:#fff;}
+.follow-us{width:230px;height:130px;position:absolute;right:30px;top:50%;margin-top:-65px;background:url(follow-us.png) no-repeat;}
+.follow-us .follow-link,.follow-us .follow-num{position:absolute;height:20px;line-height:20px;}
+.follow-us .follow-link{left:64px;width:54px;text-indent:-9999em;}
+.follow-us .follow-num{left:124px;text-align:center;width:50px;}
+.follow-us .flink-fb,.follow-us .fnum-fb{top:23px;}
+.follow-us .flink-wb,.follow-us .fnum-wb{top:96px;}
+
+/* copyright */
+#copyright{background-color:#32343a;}
+#copyright .wrap-inner{line-height:30px;padding:15px 0;color:#999;}
+#copyright h2{padding-left:20px;}
+#copyright p{padding-right:20px;}

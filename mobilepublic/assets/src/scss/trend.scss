@@ -1,0 +1,98 @@
+@import 'common.scss';
+
+.latest-lottery{
+    border-bottom: 5px solid #dee0e1;
+    &:last-child{
+        border-bottom: 0;
+    }
+    // .media-heading strong{
+    //   font-size: 20px;
+    //   @include max-screen(360px) {
+    //     &{
+    //       font-size: 18px;
+    //     }
+    //   }
+    // }
+}
+
+// 开奖历史号码相关
+.lottery-list{
+    text-align: left;
+    margin-bottom: 0;
+    // border-top: 1px solid $cBorder;
+    // padding-top: 5px;
+    dt, dd{
+        width: 40%;
+        float: left;
+        font-size: 14px;
+        @include max-screen(360px) {
+            &{
+                font-size: 12px;
+            }
+        }
+        line-height: 2.5;
+        border-top: 1px dashed $cBorder;
+        // &:nth-child(1), &:nth-child(2){
+        //   border-top: none;
+        // }
+    }
+    dt{
+        font-weight: normal;
+        text-indent: 10px;
+        white-space: nowrap;
+        span{
+            padding: 0 4px;
+        }
+    }
+    dd{
+        width: 60%;
+        letter-spacing: 12px;
+        text-indent: 10px;
+        // color: $cHighlight;
+        color: $cGrayDark;
+    }
+    @at-root .latest-lottery-l115{
+        dd{
+            letter-spacing: 0;
+            word-spacing: 8px;
+        }
+    }
+    @at-root .trend-buttons{
+        text-align: left;
+        padding: 10px 10px 0;
+        >a{
+            margin-right: 10px;
+        }
+    }
+}
+.trend-content .table .issue-lottery-number {
+    word-spacing: 25px
+}
+.latest-lottery-pk10 .lottery-list dd {
+    letter-spacing: 0
+}
+
+.latest-lottery-pk10 .lottery-number li:nth-child(n+6) {
+    margin-top: 5px
+}
+
+.trend-content{
+    .table{
+        font-size: 14px!important;
+        margin-bottom: 0;
+        .issue-lottery-number{
+            word-spacing: 15px;
+        }
+    }
+}
+
+.trend-nav{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 10;
+    width: 100%;
+    padding: 10px 4%;
+    background-color: $bgColor1;
+    border-top: 1px solid $cBorder;
+}

@@ -1,0 +1,72 @@
+/* fade */
+@keyframes fade {
+	0%   { opacity: 0; }
+	100% { opacity: 1; }
+}
+@-webkit-keyframes fade {
+	0%   { opacity: 0; }
+	100% { opacity: 1; }
+}
+
+/* up and down */
+@-webkit-keyframes updown {
+	0%   { margin-top: -10px; }
+	30%  { margin-top: -5px; }
+	70%  { margin-top: 0px; }
+	100% { margin-top: 5px; }
+}
+@keyframes updown{
+	0%   { margin-top: -10px; }
+	30%  { margin-top: -5px; }
+	70%  { margin-top: 0px; }
+	100% { margin-top: 5px; }
+}
+
+/* scale */
+@keyframes scale{
+	0%   { transform:scale(.6); opacity: 0.4; }
+	100% { transform:scale(1); opacity: 1; }
+}
+@-webkit-keyframes scale {
+	0%   { -webkit-transform:scale(.6); opacity: 0.4; }
+	100% { -webkit-transform:scale(1); opacity: 1; }
+}
+
+/* cycle */
+@keyframes cycle{
+	0%   { transform:rotate(0); }
+	100% { transform:rotate(360deg); }
+}
+@-webkit-keyframes cycle {
+	0%   { -webkit-transform:rotate(0); }
+	100% { -webkit-transform:rotate(360deg); }
+}
+
+.animation-fade{
+	-webkit-animation: fade .8s linear 0s infinite alternate;
+	animation        : fade .8s linear 0s infinite alternate;
+}
+.animation-scale{
+	-webkit-animation: scale .8s linear 0s infinite alternate;
+	animation        : scale .8s linear 0s infinite alternate;
+}
+.animation-updown{
+	-webkit-animation: updown .8s linear 0s infinite alternate;
+	animation        : updown .8s linear 0s infinite alternate;
+}
+.animation-cycle{
+	-webkit-animation: cycle 3s linear 0s infinite forwards;
+	animation        : cycle 3s linear 0s infinite forwards;
+}
+.animation-fade-cycle{
+	-webkit-animation: fade 1.2s linear 1.2s forwards, cycle 3s linear 1.2s infinite forwards;
+	animation        : fade 1.2s linear 1.2s forwards, cycle 3s linear 1.2s infinite forwards;
+}
+
+.animation-progress{
+	-webkit-transition: width .8s linear;
+	   -moz-transition: width .8s linear;
+		-ms-transition: width .8s linear;
+		 -o-transition: width .8s linear;
+			transition: width .8s linear;
+}

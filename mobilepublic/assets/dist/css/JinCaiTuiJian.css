@@ -1,0 +1,80 @@
+
+.divImageScroll{
+    width: 100%;
+    height:424px;
+    position: relative;
+}
+divImageScroll{
+    width: 100%;
+    height:424px;
+    position: relative;
+}
+#tbImageScrollBrowse {
+    width: 100%;
+    height:424px;
+    border: 0px;
+}
+#tbImageScrollBrowse img{
+    width: 100%;
+    height:424px;
+}
+.divImageIndex {
+    position: absolute;
+    bottom:5px;
+    z-index:999;
+    left: 45%;
+}
+.divImageIndex td{
+    padding-left: 20px;
+}
+.divImageIndex img{
+    width: 40px;
+    height: 40px;
+}
+#tongzhiDiv{
+    padding-left: 50px;
+    padding-top:30px;
+    position: absolute;
+    z-index: 100
+}
+#IssueResultConent{
+    background:url(../images/JinCaiTuiJian/newReward.png);
+    width: 100%;
+    height: 297px;
+    background-size:100% 100%;
+}
+#dateTd{
+    font-size:40px;
+    text-align:right;
+    color:#7a658a;
+}
+#lucyShowConent{
+    background:url(../images/JinCaiTuiJian/RongYuBang.png);
+    width: 100%;
+    height: 143px;
+    background-size:100% 100%;
+}
+#lucyP{
+    vertical-align:middle;
+    height:100%;
+    color:#7a658a;
+    font-size:30px;
+    padding-top:40px;
+    padding-left:25%;
+}
+#hotIssueConent {
+    background: url(../images/JinCaiTuiJian/ReMenCaiPiao.png);
+    width: 100%;
+    height: 670px;
+    background-size: 100% 100%;
+}
+.hotIssueButton{
+    width: 100%;
+    height: 180px;
+    background-position:center center;
+    background-repeat: no-repeat;
+    background-size:100% 100%;
+}
+.lottery-table{
+    width:50%;
+}

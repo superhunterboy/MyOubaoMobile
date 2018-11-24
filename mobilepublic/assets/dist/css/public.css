@@ -1,0 +1,168 @@
+li{list-style:none}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,th,td{margin:0;padding:0}
+h1,h2,h3,h4,h5,h6 {
+    color: white;
+    font-family: 微软雅黑;
+    font-weight: normal;
+}
+h1{
+    font-size:60px;
+}
+h2{
+    font-size:40px;
+}
+img{padding:0;border:0;}
+button{outline:none;border:none;}
+
+.white50{
+    font-size:50px;
+    color: #ffffff;
+}
+.white35{
+    font-size:35px;
+    color: #ffffff;
+}
+.black55{
+    font-weight:bold;
+    font-size:55px;
+    color:black;
+}
+.black50{
+    font-weight:bold;
+    font-size:50px;
+    color:black;
+}
+.black30{
+    font-weight:bold;
+    font-size:30px;
+    color:black;
+}
+.gray35{
+    font-size:35px;
+    color: darkgrey;
+}
+.gray40{
+    font-size:40px;
+    color: darkgrey;
+}
+ .gray50{
+     font-size:50px;
+     color: darkgrey;
+ }
+.blue40{
+    color: #29bfc9;
+    font-size:40px;
+}
+.blue50{
+    color: #29bfc9;
+    font-size:50px;
+}
+.red30{
+    font-size:30px;
+    color: #d96162;
+}
+
+.red50{
+    font-size:50px;
+    color: #d96162;
+}
+ .red70{
+     font-size:70px;
+     color: #d96162;
+     font-weight: bold;
+ }
+.ziSe50{
+    font-size:50px;
+    font-weight:bold;
+    color: #473755;
+}
+.ziSe40{
+    font-size:40px;
+    font-weight:bold;
+    color: #473755;
+}
+.ziSe30{
+    font-size:30px;
+    font-weight:bold;
+    color: #473755;
+}
+#bodyConent{
+    background-image: url(../images/public/bg.png);
+    background-size:100%
+}
+#bodyHeadConent{
+padding-top:80px;
+    width:100%;
+    height:100px;
+}
+
+#HeadLeft{
+    text-align:left;
+    width:15%;
+    padding-left:55px;
+}
+#HeadCenter{
+    text-align: center;
+    width:70%;
+}
+#HeadRight{
+    text-align: right;
+    width:15%;
+    padding-right:45px;
+}
+#bodyMainConent{
+    background:url(../images/public/center.png)center top no-repeat;
+    background-size:100% 100%;
+    width:100%;
+    height:1360px;
+}
+#bodyMainConentNoFooter{
+    background:url(../images/public/center.png)center top no-repeat;
+    background-size:100% 100%;
+    width:100%;
+    height:1500px;
+}
+#bodyMainConent1200{
+    background:url(../images/others/center.png)center top no-repeat;
+    background-size:100% 100%;
+    width:100%;
+    height:1200px;
+}
+#bodyMainConent1720{
+    margin-top:-170px;
+    background:url(../images/public/color.png);
+    background-size:100% 100%;
+    width:100%;
+    height: 1720px;
+}
+#bodyMainConent1340 {
+    background: url(../images/public/center.png) center top no-repeat;
+    background-size: 100% 100%;
+    width: 96%;
+    height: 1340px;
+}
+
+#mainHeadConent{
+    background:url(../images/public/red.png)center top no-repeat;
+    background-size:100% 100%;
+    width: 100%;
+    height: 173px;
+}
+#bodyFooterConent {
+    background-color: #08000f;
+    background-size: 100%;
+    height: 200px;
+}
+#footerLeftSpan{
+    color:#ffffff;
+    font-size:55px;
+}
+#footerCenterImage{
+    width: 165px;
+    height: 145px;
+    background-size:100% 100%;
+}
+#footerRightSpan{
+    color:#ffffff;
+    font-size:55px;
+}

@@ -1,0 +1,225 @@
+﻿html, body {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Microsoft YaHei', '华文黑体STHeiTi','黑体',Helvetica Neue,Arial, Helvetica;
+    width: 100%;
+    min-height: 100%;
+    position: relative;
+    background-color: white;
+    color: #000;
+    line-height: 1;
+    font-size: 14px;
+}
+
+body {
+    position: absolute;
+}
+
+* {
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    position: relative;
+    vertical-align: middle;
+    margin: 0;
+    padding: 0;
+    /*-webkit-tap-highlight-color: rgba(0,0,0,0);*/
+}
+
+ul, li {
+    list-style: none outside none;
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    display: inline-block;
+}
+
+/*img {
+    width: 100%;
+}*/
+
+input {
+    font-family: 'Microsoft YaHei', '华文黑体STHeiTi','黑体',Helvetica Neue,Arial, Helvetica;
+    font-size: .3rem;
+}
+
+div:after, ul:after, li:after {
+    content: "";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+.color-white {
+    color: white;
+}
+
+.float-right {
+    float: right;
+}
+
+.float-left {
+    float: left;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.btn {
+    display: inline-block;
+    margin-bottom: 0;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 6px;
+    font-size: 14px;
+    line-height: 1;
+}
+
+
+.login-bg {
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    left: 0;
+    top: 0;
+}
+
+.login-bg .login-logo {
+    margin-top: 1.5rem;
+    text-align: center;
+}
+
+.login-bg .login-logo img {
+    width: 4.86rem;
+    margin: 0 auto;
+}
+
+.icon-usename {
+    display: inline-block;
+    background: url('../images/icon/icon-usename.png') no-repeat;
+    background-size: 100% 100%;
+    width: .63rem;
+    height: .61rem;
+}
+
+.icon-psw {
+    display: inline-block;
+    background: url('../images/icon/icon-psw.png') no-repeat;
+    background-size: 100% 100%;
+    width: .46rem;
+    height: .59rem;
+}
+
+.rcheck {
+    width: .63rem;
+    height: .63rem;
+    display: inline-block;
+    border: 1px solid #d8d8d8;
+    border-radius: .15rem;
+}
+
+.rcheck input[type=radio] {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    opacity: 0;
+}
+
+.rchecked {
+    border: 0;
+    background: url('../img/gou.png') no-repeat;
+    background-size: .3rem .24rem;
+    background-position: 50% 50%;
+    background-color: #04a9f4;
+}
+
+.view {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    left: 0;
+    top: 0;
+}
+
+.bg1 {
+    background: url('../img/bg1.jpg') center center fixed;
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.header-nav {
+    color: #fff;
+    display: -webkit-box;
+    height: 1.5rem;
+    line-height: 1.5rem;
+    padding-left: .6rem;
+    padding-right: .5rem;
+}
+
+.header-nav .hn-return {
+    background: url('../img/hn-return.png') no-repeat;
+    background-size: 100% 100%;
+    width: .31rem;
+    height: .56rem;
+    display: inline-block;
+}
+
+.header-nav .hn-title {
+    font-size: .56rem;
+    text-align: center;
+    -webkit-box-flex: 1;
+}
+
+.header-nav .hn-rbtn {
+    font-size: .42rem;
+    padding-top: .03rem;
+}
+
+.color-f0604e {
+    color: #f0604e !important;
+}
+
+.btn-lg-red {
+    background-color: #f0604e;
+    color: #FFF;
+    font-size: .48rem;
+    text-align: center;
+    line-height: 1.3rem;
+    height: 1.3rem;
+    border-radius: .15rem;
+    display: block;
+}

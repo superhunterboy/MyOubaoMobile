@@ -1,0 +1,874 @@
+@mixin linear-gradient($angle, $color-stops...) {
+  $_angle-with-vendor-prefix: "";
+  $_angle: "";
+  @if $angle == "to top" or $angle == "bottom" {
+    $_angle-with-vendor-prefix: bottom;
+    $_angle: to top;
+  } @else if $angle == "to right" or $angle == "left" {
+    $_angle-with-vendor-prefix: left;
+    $_angle: to right;
+  } @else if $angle == "to bottom" or $angle == "top" {
+    $_angle-with-vendor-prefix: top;
+    $_angle: to bottom;
+  } @else if $angle == "to left" or $angle == "right" {
+    $_angle-with-vendor-prefix: right;
+    $_angle: to left;
+  } @else if $angle == "to top right" or $angle == "bottom left" {
+    $_angle-with-vendor-prefix: bottom left;
+    $_angle: to top right;
+  } @else if $angle == "to bottom right" or $angle == "top left" {
+    $_angle-with-vendor-prefix: top left;
+    $_angle: to bottom right;
+  } @else if $angle == "to bottom left" or $angle == "top right" {
+    $_angle-with-vendor-prefix: top right;
+    $_angle: to bottom left;
+  } @else if $angle == "to top left" or $angle == "bottom right" {
+    $_angle-with-vendor-prefix: bottom right;
+    $_angle: to top left;
+  } @else {
+    $_angle-with-vendor-prefix: $angle % 360;
+    $_angle: (90 - $angle) % 360;
+  }
+  background: -webkit-linear-gradient($_angle-with-vendor-prefix, $color-stops);
+  background: -moz-linear-gradient($_angle-with-vendor-prefix, $color-stops);
+  background: -o-linear-gradient($_angle-with-vendor-prefix, $color-stops);
+  background: linear-gradient($_angle, $color-stops);
+}
+
+@mixin max-screen($res){
+  @media only screen and ( max-width: $res )
+  {
+    @content;
+  }
+}
+
+$bgColor1: #fff;
+$bgColor2: #f4f4f4;
+$bgColorPanel: #111; //#221451
+
+$cWhite: #fff;
+$cLight: #dee0e1;
+$cRed: #f00;
+$cHighlight: #D22A2A;
+$cGreen: #0eb9c4;
+$cDark: #000;
+$cLightDark: #333;
+$cGrayDark: #666;
+$cGray: #9c9c9c;
+
+$cBorder: #d3d6d6;
+$cBorderLight: #d9d9d9;
+
+$gameBgColors: (#5b52b0, #4baac2, #85bb5a, #7199f0, #986bdb, #e19354);
+
+$font: 'San Francisco','Helvetica Neue','Helvetica','STHeitiSC-Light',Arial,sans-serif;
+$fontCode: monospace,Monaco,sans-serif;
+
+$svgPath: '../images/svg/';
+
+html,body{
+  height: 100%;
+}
+body,input,button,textarea,select{
+  -webkit-font-smoothing: antialiased;
+  color: $cGray;
+}
+body{
+  background-color: $bgColor2;
+}
+.left{
+  float: left;
+}
+.right{
+  float: right;
+}
+
+// 颜色class
+$colors: (
+  white: $cWhite,
+  light: $cLight,
+  red: $cRed,
+  highlight: $cHighlight,
+  green: $cGreen,
+  dark: $cDark,
+  light-dark: $cLightDark,
+  gray-dark: $cGrayDark,
+  gray: $cGray
+);
+@each $name, $color in $colors {
+  .c-#{$name} {
+    color: $color!important;
+  }
+}
+
+// 字体
+.font-code{
+  font-family: $fontCode;
+}
+
+// section
+body{
+  overflow: hidden;
+}
+// 主体内容层
+#section{
+  width: 100%;
+  overflow-y: auto;
+  position: relative;
+  z-index: 1
+}
+
+// 金额格式化
+[data-money-format] small{
+  font-size: 80%;
+}
+
+%button{
+  border-radius: 5px;
+  color: #fff;
+  border: none;
+  outline: none;
+  background-color: $cHighlight;
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  line-height: 40px;
+  font-size: 18px;
+}
+%button-disabled{
+  opacity: .3;
+  cursor: default;
+}
+
+.ds-btn{
+  @extend %button;
+  &.ds-btn-disabled{
+    @extend %button-disabled;
+  }
+  &:hover,&:focus{
+    color: #fff;
+    text-decoration: none;
+    outline: none;
+  }
+  &.ds-btn-primary{
+    background-color: #fff;
+  }
+  &.ds-btn-sm{
+    line-height: 30px;
+    font-size: 14px;
+  }
+  &.ds-btn-xs{
+    line-height: 24px;
+    font-size: 12px;
+  }
+}
+// 自定义的button类
+.btn-dsbtn{
+  border-color: #d83204;
+  background: #fa5020;
+  color: white;
+}
+
+@for $i from 1 through 10 {
+  .ds-btn-opacity-#{$i}{
+    opacity: $i/10;
+  }
+}
+@for $i from 2 through 4 {
+  .ds-button-group-#{$i}{
+    .ds-btn{
+      width: (100%-2%)/$i;
+    }
+  }
+}
+
+// 顶部
+$baseFS: 22px;
+$baseFS1: 20px;
+$baseFS2: 18px;
+$baseLH: 2.2;
+%topnavfont{
+  color: white;
+  font-size: $baseFS;
+  line-height: $baseLH;
+  @include max-screen(360px) {
+    &{
+      font-size: $baseFS1;
+    }
+  }
+  @include max-screen(320px) {
+    &{
+      font-size: $baseFS2;
+    }
+  }
+}
+.top-nav{
+  width: 100%;
+  position: relative;
+  left: 0;
+  top: 0;
+  z-index: 2;
+  // @include linear-gradient(top, rgba(#221451, .95), rgba(#280990, .95));
+  background: $bgColorPanel;
+
+  &.fixed{
+    position: fixed;
+  }
+  &:after{
+    content: '';
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    // background-color: #ff5a00;
+    // filter: blur(20px);
+    z-index: -1;
+  }
+  h1, h2{
+    text-align: center;
+    margin: 0;
+    @extend %topnavfont;
+  }
+  .media-left{
+    +h2.media-body,
+    +h1.media-body{
+      padding-right: 40px;
+    }
+  }
+  .media-left,.media-right{
+    @extend %topnavfont;
+    padding:0 10px;
+    text-decoration: none;
+  }
+  .media-right{
+    font-size: 18px;
+    white-space: nowrap;
+    a{
+      color: white;
+    }
+  }
+  .media-right .glyphicon{
+    font-size: 16px;
+  }
+  .media-right .action-button{
+    font-size: 14px;
+  }
+  .history-back, .action-back{
+    font-size: $baseFS;
+    line-height: $baseLH;
+    text-align: left;
+    color: white;
+    text-decoration: none!important;
+    @include max-screen(360px) {
+      &{
+        font-size: $baseFS1;
+      }
+    }
+    @include max-screen(320px) {
+      &{
+        font-size: $baseFS2;
+      }
+    }
+    // margin-left: -10px;
+  }
+}
+
+/*
+** unicode-icons
+*/
+// (prev, '\2329', 〈)
+$unicodeIcons: (info, '\24D8', ⓘ),
+(prev, '\27E8', ⟨), (delete,'\2715', ✕), (choose,'\221A', √);
+// [class|='unicode-icon']{}
+@each $name, $content in $unicodeIcons {
+  .unicode-icon-#{$name}{
+    position: relative;
+    margin-right: 2px;
+    &:before{
+      content: $content;
+      // position: absolute;
+      // right: 0;
+      font-family: Arial,sans-serif,monospace,Monaco;
+    }
+  }
+}
+
+.unicode-icon-prev{
+  white-space: nowrap;
+  &:before{
+    content: '';
+    display: inline-block;
+    transform: rotate(-45deg);
+    width: 10px;
+    height: 10px;
+    border-width: 2px 0 0 2px;
+    border-color: white;
+    border-style: solid;
+    vertical-align: middle;
+  }
+  &:after{
+    content: '返回';
+    font-size: 14px;
+    vertical-align: middle;
+    display: inline-block;
+  }
+}
+
+
+// 开奖号码
+.latest-lottery{
+  position: relative;
+  text-align: center;
+  padding: 4px 0 8px;
+  overflow: hidden;
+  .lottery-tag{
+    position: absolute;
+    left: 0;
+    top: 0%;
+    height: 0;
+    color: #fff;
+    border: 8vw solid #624aca;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    font-family: $fontCode;
+    span{
+      position: absolute;
+      left: -9vw;
+      width: 12vw;
+      top: -6vw;
+      font-size: 20px;
+      line-height: 1.5;
+      text-align: center;
+      transform: rotate(-45deg);
+    }
+  }
+  >.media{
+    margin-top: 0;
+    >.media-body{
+      padding-left: 10px;
+      padding-right: 10px;
+      .lottery-number{
+        padding-top: 10px;
+        padding-bottom: 10px;
+      }
+    }
+    >.media-right{
+      border-left: 1px dashed $cBorder;
+      padding-right: 10px;
+      // width: 18%;
+      a{
+        display: inline-block;
+        white-space: nowrap;
+      }
+      span{
+        color: $cGray;
+        font-size: 14px;
+        &.glyphicon{
+          color: #0eb9c4;
+          font-size: 20px;
+        }
+      }
+    }
+  }
+  .media-heading{
+    margin: 0 auto;
+    color: $cGray;
+    line-height: 2;
+    border-bottom: 1px dashed $cBorder;
+    h4{
+      white-space: nowrap;
+      text-align: left;
+      padding-left: 10px;
+      line-height: 2;
+      font-size: 18px;
+      color: $cHighlight;
+      @include max-screen(360px) {
+        &{
+          font-size: 14px;
+        }
+      }
+      >*{
+        display: inline-block;
+        vertical-align: middle;
+      }
+    }
+  }
+}
+
+%ball-front{
+  content: attr(data-value) " ";
+  position: absolute;
+  left: 10%;
+  top: 10%;
+  z-index: 1;
+  width: 80%;
+  height: 80%;
+  border-radius: 50%;
+}
+%ball-back{
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+%ball-style-selected-front{
+  @include linear-gradient(bottom, #fe4201, #D22A2A);
+  box-shadow: none;
+}
+%ball-style-selected-back{
+  @include linear-gradient(bottom, #ffe6d0, #D22A2A);
+  box-shadow: inset 0 0 15px rgba(#f9aa8b, .75);
+}
+%ball-style-front{
+  @include linear-gradient(bottom, #dfe1e4, #fcfdfd);
+  box-shadow: 0px 2px 0px rgba(#c4c5c5, .75);
+}
+%ball-style-back{
+  @include linear-gradient(bottom, #edeeef, #eeeff0);
+  box-shadow: inset 0px 1px 2px rgba(#c7c8c9, .75);
+}
+
+// 开奖号码球相关
+.lottery-number{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+  // inline-block fix
+  letter-spacing: normal;
+  line-height: 0;
+  font-size: 0;
+  &.active{
+    li{
+      $delay: .2;
+      @for $i from 1 to 8 {
+        &:nth-child(#{$i}){
+          .number,.number-front{
+            -webkit-animation: turn 2s $delay*$i+s forwards;
+            animation: turn 2s $delay*$i+s forwards;
+          }
+        }
+      }
+    }
+  }
+  li{
+    position: relative;
+    width: 12%;
+    height: 0;
+    padding-bottom: 12%;
+    display: inline-block;
+    margin: 0 1%;
+    font-weight: 200;
+    font-size: 6vw;
+    line-height: 9vw;
+  }
+  .number,.number-front{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    @extend %ball-back;
+    @extend %ball-style-selected-back;
+    &:after{
+      @extend %ball-front;
+      @extend %ball-style-selected-front;
+      color: white;
+      text-shadow: 1px 1px 1px rgba(0,0,0, .6);
+    }
+  }
+  .number-front{
+    z-index: 5;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+  .number{
+    // display: none;
+    span{
+      // display: none
+    }
+  }
+}
+
+@-webkit-keyframes turn {
+  to {
+    opacity: 1;
+    -webkit-transform: rotateX(360deg);
+  }
+}
+
+@keyframes turn {
+  to {
+    opacity: 1;
+    transform: rotateX(360deg);
+  }
+}
+
+// bottom nav
+$svgIcons: 'nav-tuijian.svg', 'nav-game.svg', 'nav-trend.svg','nav-account.svg';
+.bottom-nav{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 3;
+  border-top: 1px solid #D22A2A;
+  background-color: #191919;
+  // &:after{
+  //   content: '';
+  //   position: absolute;
+  //   top:0;
+  //   left: 0;
+  //   width: 100%;
+  //   height: 100%;
+  //   background-color: rgba(#e8e8e8, 1);
+  //   filter: blur(20px);
+  //   z-index: -1;
+  // }
+  a{
+    display: block;
+    width: 25%;
+    padding: 5px 0;
+    text-align: center;
+    float: left;
+    color: #717273;
+    font-size: 3vw;
+    // @include max-screen(360px) {
+    //   &{
+    //     font-size: 14px;
+    //   }
+    // }
+    // @include max-screen(320px) {
+    //   &{
+    //     font-size: 12px;
+    //   }
+    // }
+    i{
+      display: inline-block;
+      // width: 40%;
+      width: 60%;
+      padding-bottom: 8.5vw; // 50% => 50vw => 50vw * 25% => 12.5vw
+      height: 0;
+      background-color: #717273;
+    }
+    @for $i from 1 through length($svgIcons) {
+      $svg: $svgPath + nth($svgIcons, $i);
+      &:nth-child(#{$i}) i{
+        mask: url($svg) no-repeat 50% 50%;
+        mask-size: cover;
+      }
+    }
+    span{
+      display: block;
+    }
+
+    .home &:nth-child(1),
+    .game &:nth-child(2),
+    .trend &:nth-child(3),
+    .account &:nth-child(4),
+    &:hover, &:focus, &.active{
+      color: #fff;
+      background: #000;
+      text-decoration: none;
+    }
+    .home &:nth-child(1) i,
+    .game &:nth-child(2) i,
+    .trend &:nth-child(3) i,
+    .account &:nth-child(4) i,
+    &:hover i, &:focus i, &.active i{
+      background-color: #fff;
+    }
+  }
+
+}
+
+// NAV-TABS
+.ds-tabs{
+  .nav-tabs{
+    border: none;
+    background-color: #eeefef;
+    @for $i from 1 through 6 {
+      &.nav-tabs#{$i} > li{
+        width: 1/$i*100 + %;
+      }
+    }
+    >li{
+      text-align: center;
+      >a{
+        color: $cGray;
+        border: none;
+        border-bottom: 2px solid transparent;
+        padding-left: 0;
+        padding-right: 0;
+        font-size: 16px;
+        // font-weight: bold;
+        @include max-screen(360px) {
+          &{
+            font-size: 14px;
+          }
+        }
+      }
+      &:not(:nth-child(1)):before{
+        content: '';
+        width: 0;
+        height: 60%;
+        position: absolute;
+        left: 0;
+        top: 20%;
+        border-left: 1px solid #e7e9e9;
+      }
+    }
+    >li.active>a,
+    >li.active>a:hover,
+    >li.active>a:focus{
+      color: $cGray;
+      border-width: 0;
+      border-color: transparent;
+      border-bottom-width: 2px;
+      border-bottom-color: #D22A2A;
+      background-color: transparent;
+    }
+    .dropdown>a:hover,.dropdown>a:focus{
+      background-color: transparent;
+    }
+  }
+  .tab-content{
+    background-color: $bgColor1;
+    .tab-pane{
+      position: relative;
+    }
+  }
+}
+
+.table{
+
+  th,td{
+    text-align: center;
+    &.text-left{
+      text-align: left;
+    }
+    &:last-child{
+      text-align: right;
+    }
+    &:first-child{
+      text-align: left;
+    }
+  }
+
+  @include max-screen(400px) {
+    &{
+      font-size: 12px;
+    }
+  }
+}
+
+// 弹出二级页面
+.show-page{
+  position: relative;
+  height: 100%;
+  width: 100%;
+  z-index: 3;
+  transition: transform .45s ease-in;
+  transform: translateX(0);
+  &.ds-hide{
+    transform: translateX(-100%);
+  }
+}
+.hide-page{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: $bgColor1;
+  z-index: 4;
+  transition: transform .45s ease-in;
+  transform: translateX(100%);
+  &.ds-show{
+    transform: translateX(0);
+  }
+}
+
+/*
+*** ds-cells
+ */
+$cellPaddingH: 4%;
+$cellPaddingV: 0;
+$cellMarginTop: 15px;
+%cellPadding{
+  padding: $cellPaddingV $cellPaddingH;
+}
+.ds-cells{
+  margin-top: $cellMarginTop;
+  // @extend %cellPadding;
+  padding-left: $cellPaddingH;
+  border-top: 1px solid $cBorderLight;
+  border-bottom: 1px solid $cBorderLight;
+  background-color: $bgColor1;
+  @at-root .ds-cell{
+    display: block;
+    padding: 3% 0;
+    color: $cGrayDark!important;
+    text-decoration: none!important;
+    border-top: 1px solid $cBorderLight;
+    overflow: hidden;
+    zoom: 1;
+    input[readonly]{
+      background-color: transparent;
+      border-color: transparent;
+    }
+    &:first-child{
+      border-top-color: transparent;
+    }
+    &>*{
+      display: table-cell;
+      vertical-align: middle;
+      word-wrap: break-word;
+      word-break: break-all;
+      white-space: nowrap;
+    }
+    .ds-cell-hd{
+      .ds-cell-icon{
+        width: 20px;
+        height: 20px;
+        margin-right: 10px;
+        position: relative;
+        &.bank-icon-box{
+          width: 40px;
+          height: 40px;
+        }
+      }
+    }
+    .ds-cell-bd{
+      width: 3000px; // 足够宽
+      white-space: normal;
+      p{
+        margin-bottom: 0;
+      }
+      @at-root .ds-cell-bd-desc{
+        margin-top: 6px;
+        >small, >span{
+          min-width: 80px;
+          display: inline-block;
+          vertical-align: middle;
+          margin-right: 10px;
+        }
+      }
+    }
+    .ds-cell-ft{
+      // text-align: right;
+      color: $cGray;
+      padding-right: $cellPaddingH;
+      &:after{
+        content: " ";
+        color: $cLight;
+        display: inline-block;
+        transform: rotate(45deg);
+        height: 6px;
+        width: 6px;
+        border-width: 2px 2px 0 0;
+        border-color: $cBorder;
+        border-style: solid;
+        position: relative;
+        top: -1px;
+        margin-left: 6px;
+      }
+      &.ds-cell-ft-end:after{
+        opacity: 0;
+      }
+    }
+  }
+  &.dropdown{
+    .dropdown-menu{
+      padding: 0 $cellMarginTop;
+      margin: 0;
+      background-color: $bgColor2;
+      border-radius: 0;
+      box-shadow: none;
+      max-height: 160px;
+      overflow-y: auto;
+      .ds-cell{
+        width: 50%;
+        float: left;
+        padding: 5px 0;
+        margin-bottom: -1px;
+        border-top: none;
+        border-bottom: 1px solid $cBorderLight;
+        // &:nth-child(2){
+        //   border-bottom-color: transparent;
+        // }
+        .ds-cell-hd .ds-cell-icon.bank-icon-box{
+          width: 30px;
+          height: 30px;
+          margin-right: 5px;
+        }
+        .ds-cell-bd{
+          line-height: 15px;
+          height: 30px;
+        }
+        &.active{
+          .ds-cell-bd{
+            // font-size: 40px;
+            color: $cHighlight;
+            &:after{
+              content: '\221A';
+            }
+          }
+        }
+      }
+
+    }
+  }
+}
+.ds-cells-noline{
+  border: none;
+}
+.ds-cells-nopadding{
+  padding-left: 0;
+}
+.ds-cells-space{
+  padding-right: $cellPaddingH;
+}
+.ds-cells-info{
+  background-color: transparent;
+  border: none;
+  padding-right: $cellPaddingH;
+  font-size: 80%;
+}
+
+/*
+*** data-tabload-content
+ */
+[data-tabload-content]{
+  min-height: 120px;
+  position: relative;
+  .ds-load-loading{
+    position: absolute;
+    margin: 0;
+    left: 50%;
+    top: 40px;
+    margin-left: -20px;
+    z-index: 10;
+  }
+}
+
+.breadcrumb{
+  margin-bottom: 15px;
+  text-align: center;
+  &.breadcrumb-top{
+    margin-top: 15px;
+  }
+  a{
+    text-decoration: none!important;
+  }
+}
+
+/*
+*** ios下无法触发dropdown
+*** http://stackoverflow.com/questions/17579750/drop-down-menu-not-working-on-mobile-devices
+ */
+.dropdown-backdrop{
+  position: static;
+}
+
+@import 'spinkit/spinners/2-double-bounce';

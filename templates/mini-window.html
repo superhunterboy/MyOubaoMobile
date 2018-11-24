@@ -1,0 +1,119 @@
+
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<title>投注记录</title>
+<link media="all" type="text/css" rel="stylesheet" href="../userpublic/assets/images/global/global.css">
+<style type="text/css">
+.table thead{ position: fixed;}
+</style>
+
+<script src="../userpublic/assets/js/jquery-1.9.1.min.js"></script>
+<script src="../userpublic/assets/js/dsgame.base.js"></script>
+<script src="../userpublic/assets/js/dsgame.Select.js"></script>
+<script src="../userpublic/assets/js/dsgame.Tip.js"></script>
+</head>
+
+<body>
+<table width="100%" class="table" id="J-table">
+	<thead>
+		<tr>
+			<th style="font-size: 12px;">注单编号</th>
+			<th style="font-size: 12px;">投注时间</th>
+			<th style="font-size: 12px;">游戏</th>
+			<th style="font-size: 12px;">玩法</th>
+			<th style="font-size: 12px;">奖期</th>
+			<th style="font-size: 12px;">模式</th>
+			<th style="font-size: 12px;">投注内容</th>
+			<th style="font-size: 12px;">倍数</th>
+			<th style="font-size: 12px;">金额</th>
+			<th style="font-size: 12px;">是否中奖</th>
+			<th style="font-size: 12px;">奖金</th>
+			<th style="font-size: 12px;">是否追号</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+		   <th style="font-size: 12px;">注单编号</th>
+			<th style="font-size: 12px;">投注时间</th>
+			<th style="font-size: 12px;">游戏</th>
+			<th style="font-size: 12px;">玩法</th>
+			<th style="font-size: 12px;">奖期</th>
+			<th style="font-size: 12px;">模式</th>
+			<th style="font-size: 12px;">投注内容</th>
+			<th style="font-size: 12px;">倍数</th>
+			<th style="font-size: 12px;">金额</th>
+			<th style="font-size: 12px;">是否中奖</th>
+			<th style="font-size: 12px;">奖金</th>
+			<th style="font-size: 12px;">是否追号</th>
+		</tr>
+				<tr>
+			<td>
+				<a class="view-detail" href="http://dsgame188.com/baughts/2358/view" target="_blank">5538...</a><textarea class="data-textarea" style="display:none;">55380989C6ABEF8E970C4D4D39651551 </textarea>
+			</td>
+			<td> 01-22 14:12:52 </td>
+			<td> 重庆时时彩 </td>
+			<td> 后三直选复式 </td>
+			<td> 150122050 </td>
+			<td> 分 </td>
+			<td>
+									7|7|7                            </td>
+			<td>1倍</td>
+			<td>0.02 </td>
+							<td>否</td>
+				<td></td>
+						<td>
+				否             </td>
+
+		</tr>
+				<tr>
+			<td>
+				<a class="view-detail" href="http://dsgame188.com/baughts/78/view" target="_blank">E77E...</a><textarea class="data-textarea" style="display:none;">E77EA85D4F673DB226E2FA03FA770AE2 </textarea>
+			</td>
+			<td> 01-01 20:25:52 </td>
+			<td> 重庆时时彩 </td>
+			<td> 五星直选复式 </td>
+			<td> 150101087 </td>
+			<td> 元 </td>
+			<td>
+									<a class="view-detail" href="javascript:void(0);">详细号码</a><textarea class="data-textarea" style="display:none;">2|2|2|2|2 </textarea>
+							</td>
+			<td>1倍</td>
+			<td>2.00 </td>
+							<td>否</td>
+				<td></td>
+						<td>
+				否             </td>
+
+		</tr>
+			</tbody>
+</table>
+
+<script>
+(function($){
+	var table = $('#J-table'),
+		details = table.find('.view-detail'),
+		tip = new dsgame.Tip({cls:'j-ui-tip-l j-ui-tip-page-records'});
+
+
+	details.hover(function(e){
+		var el = $(this),
+			text = el.parent().find('.data-textarea').val();
+		tip.setText(text);
+		tip.show(50, -(tip.getDom().height()/2), el);
+
+		e.preventDefault();
+	},function(){
+		tip.hide();
+	});
+
+	//tabel is width []
+	table.find('tbody tr:first').find('th').each(function(i){
+		table.find('thead tr:first').find(' th').eq(i).width($(this).width());
+	})
+})(jQuery);
+</script>
+
+	</body>
+</html>

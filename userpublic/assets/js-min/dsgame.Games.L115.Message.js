@@ -1,0 +1,1 @@
+!function(e,s,a){var n,t={},g="L115",i=e.Games,m={init:function(){var e=this;i.setCurrentGameMessage(e)}},r=e.Class(m,a);r.defConfig=t,r.getInstance=function(e){return n||(n=new r(e))},e.Games[g][s]=r}(dsgame,"Message",dsgame.GameMessage);

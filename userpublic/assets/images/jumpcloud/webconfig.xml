@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<website>
+  <site>
+    <ip>61.135.169.125</ip>
+    <url>http://www.baidu.com</url>
+  </site>
+  <site>
+    <ip>61.135.157.156</ip>
+    <url>http://www.qq.com</url>
+  </site>
+  <site>
+    <ip>111.202.60.47</ip>
+    <url>http://wwww.163.com</url>
+  </site>
+  <site>
+    <ip>202.108.33.60</ip>
+    <url>http://wwww.sina.com.cn</url>
+  </site>
+  <site>
+    <ip>61.135.132.59</ip>
+    <url>http://wwww.sohu.com</url>
+  </site>
+</website>

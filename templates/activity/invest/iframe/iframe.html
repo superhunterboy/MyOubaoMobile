@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>大圣财富计划，安心享收益 － 大圣游戏</title>
+<link rel="stylesheet" href="iframe.css">
+</head>
+<body>
+
+<div class="wrap" id="J-temp-loading">
+	<div class="cont">
+		<div class="loading">数据加载中...</div>
+	</div>	
+</div>
+
+<script type="text/template" id="J-temp-form">
+<div class="wrap">
+	<h1>申请成为<em>大圣游戏总代</em></h1>
+	<div class="step step1">
+		<p class="c-red">请填写正确的联系信息，以便我们能联系到您</p>
+	</div>
+	<form method="POST" action="http://www.mkg888.com/reserve-agent/reserve" accept-charset="UTF-8" class="formbox" id="form-1" enctype="multipart/form-data">
+		<ul class="form-ul">
+			<li>
+				<label>联系QQ：</label>
+				<input id="J-form-qq" name="qq" type="text" placeholder="您的QQ号">
+			</li>
+			<li>
+				<label>您方便的联系时间：</label>
+				<select class="small-select" name="available_date" id="J-form-time1">
+					<option selected value="1">周一至周五</option>
+					<option value="2">周六及周日</option>
+				</select>
+				<select class="small-select" name="available_time" id="J-form-time1">
+					<option selected value="1">9:00~12:00</option>
+					<option value="2">13:00~24:00</option>
+				</select>
+			</li>
+			<li>
+				<label>目前正在代理的平台：</label>
+				<input id="J-form-platform" name="platform" type="text" placeholder="如：9号彩票">
+			</li>
+			<li>
+				<label>最近3～5天您团队的销售总额：</label>
+				<select id="J-form-sale" name="sale">
+					<option selected="selected" value="0">小于10万</option>
+					<option value="1">10万-30万</option>
+					<option value="2">30万-50万</option>
+					<option value="3">50万-70万</option>
+					<option value="4">70万-100万</option>
+					<option value="5">大于100万</option>
+				</select>
+			</li>
+			<li>
+				<label>最近3～5天您团队的销售总额截图：</label>
+				<input name="portrait" type="file" id="J-form-file" style="display:none;">
+				<a class="file-btn">上传截图</a>
+				<span class="c-red J-file-tips">上传截图会优先与您联系</span>
+			</li>
+			<li class="vcode-li">
+				<label>验证码：</label>
+				<input id="J-form-vcode" name="vcode" type="text" placeholder="请输入验证码">		  	
+				<span><img class="img-code" id="captchaImg" width="100" height="35" src="http://www.mkg888.com/captcha??915966"></span>
+			</li>
+			<li class="button-li">
+				<button id="J-form-submit" type="submit" class="button"><span>提交预约申请</span></button>
+			</li>
+		</ul>
+	</form>
+	<div class="form-tips">
+		<h2>提高预约成功几率小贴士</h2>
+		<p>信息提交后，大圣客服将会在您方便的时间段内联系您；请保证所填信息的真实性，这有助于您快速通过审核；如果任何疑问，欢迎您通过在线客服服务咨询我们；祝您和您的家人生活愉快，身体健康！</p>
+	</div>
+</div>	
+</script>
+
+<script type="text/template" id="J-temp-success">
+<div class="wrap">
+	<h1>申请成为<em>大圣游戏总代</em></h1>
+	<div class="step step2">
+		<p class="c-red">预约申请提交成功，已进入审核阶段</p>
+	</div>
+	<div class="cont">
+		<div class="result">
+			<div class="result-status status-success"></div>
+			<p>您的预约申请信息提交成功，我们将尽快与您取得联系！</p>
+			<p class="small">感谢您对大圣游戏的关注与支持。</p>
+		</div>
+	</div>
+</div>
+</script>
+
+<script type="text/template" id="J-temp-error">
+<div class="wrap">
+	<div class="step"></div>
+	<div class="cont">
+		<div class="result">
+			<div class="result-status status-error"></div>
+			<p>{{errorMsg}}</p>
+			<p class="back small"><a href="javascript:history.back(-1);">返回</a></p>
+		</div>
+	</div>
+</div>
+</script>
+
+<script src="jquery-1.9.1.min.js"></script>
+<script>
+function getParameterByName(name) {
+    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+        results = regex.exec(location.search);
+    return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+}
+var formHtml    = $('#J-temp-form').html(),
+	successHtml = $('#J-temp-success').html(),
+	errorHtml   = $('#J-temp-error').html(),
+	msgtype     = getParameterByName('msgtype'),
+	message     = getParameterByName('message'),
+	html 		= formHtml,
+	$content    = $('#J-temp-loading');
+if( msgtype == 'success' ){
+	html = successHtml;
+}else if( msgtype == 'error' ){
+	html = errorHtml.replace(/{{errorMsg}}/g, message);
+}
+$content.replaceWith(html);
+</script>
+<script>
+$(function(){
+	$('.file-btn').on('click', function(){
+		$('input[type="file"]').click();
+	});
+	$('#J-form-file').on('change', function(){
+		var val = this.value;
+		$(this).siblings('.J-file-tips').text( val || '上传截图会优先与您联系' );
+	});
+	function changeCaptcha() {
+        captchaImg.src = "http://www.mkg888.com/captcha?" + ((Math.random()*9 +1)*100000).toFixed(0);
+    }
+	$('#J-form-submit').click(function(e){
+		var qq = $('#J-form-qq'),
+			platform = $('#J-form-platform'),
+			sale = $('#J-form-sale'),
+			vcode = $('#J-form-vcode'),
+			file = $('#J-form-file');
+
+		if(!(/^\d{5,20}$/).test($.trim(qq.val()))){
+			alert('您的qq号填写不正确，请重新填写');
+			qq.focus();
+			return false;
+		}
+		if(!$.trim(platform.val()) || !(/^.{2,20}$/).test($.trim(platform.val()))){
+			alert('当前所在平台名称填写不正确，请重新填写');
+			platform.focus();
+			return false;
+		}
+		if( !file.val() ){
+			alert('请上传销售总额截图');
+			file.click();
+			return false;
+		}
+		if(!(/^[a-zA-Z0-9]{5}$/).test($.trim(vcode.val()))){
+			alert('验证码填写不正确，请重新填写');
+			vcode.focus();
+			return false;
+		}
+	});
+	$('.img-code').on('click', changeCaptcha);
+});
+</script>
+</body>
+</html>

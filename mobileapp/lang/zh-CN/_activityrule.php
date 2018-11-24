@@ -1,0 +1,21 @@
+<?php
+return array (
+  'activity_id' => '活动ID',
+  'activity_name' => '活动名称',
+  'contribution' => '贡献值条件',
+  'contribution_cost' => '贡献值消耗',
+  'generate-type-count' => '总量',
+  'generate-type-time' => '每天',
+  'generate_rules' => '生成时间',
+  'generate_type' => '奖品分布设定',
+  'get_condition' => '抽奖条件',
+  'get_limit' => '奖品上限',
+  'left_count' => '剩余数量',
+  'prize_id' => '奖品名称',
+  'prize_name' => '奖品名称',
+  'total_count' => '奖品总数',
+  'type' => '类型',
+  'type-probability-lottery' => '概率抽奖',
+  'type-time-lottery' => '时间抽奖',
+  'user_limit' => '每个用户中奖上限',
+);

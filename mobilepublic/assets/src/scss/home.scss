@@ -1,0 +1,211 @@
+@import 'common.scss';
+
+.carousel{
+  .item{
+    img{
+      display:block;
+      width:100%;
+    }
+  }
+}
+
+.latest-lottery{
+  >.media{
+    >.media-body{
+      padding: 0;
+    }
+  }
+  .media-heading{
+    padding: 0 10px;
+    border-bottom: 1px solid #bababa;
+  }
+  .lottery-issue{
+    line-height: 1.4;
+    text-align: left;
+    h4{
+      font-size: 8vw;
+      padding-left: 0;
+      margin: 0;
+      color: $cGrayDark;
+    }
+    small{
+      display: block;
+      font-size: 3vw;
+    }
+  }
+  .media-body{
+    .lottery-number{
+      padding: 10px;
+      li{
+        width: 18%;
+        padding-bottom: 18%;
+        font-size: 8vw;
+        line-height: 14vw;
+      }
+    }
+  }
+}
+
+// 荣誉墙
+.honor-wall{
+  background-color: $bgColor1;
+  padding: 10px;
+  .marquee{
+    overflow: hidden;
+    white-space: nowrap;
+    box-sizing: border-box;
+    animation: marquee 100s linear infinite;
+    position: relative;
+    font-size: 14px;
+    &:hover {
+      animation-play-state: paused;
+    }
+    /* ::before was :before before ::before was ::before - kthx */
+    &:before, &::before {
+      z-index: 2;
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -.5em;
+      width: 1em;
+      height: 100%;
+      @include linear-gradient(left, white 70%, rgba(255,255,255,0));
+    }
+    .marquee-span{
+      padding: 0 10px;
+    }
+  }
+  .media-left{
+    white-space: nowrap;
+    font-size: 18px;
+    @include max-screen(360px) {
+      &{
+        font-size: 16px;
+      }
+    }
+  }
+}
+
+@-webkit-keyframes marquee {
+  0%   { text-indent: 5em }
+  100% { text-indent: -350em }
+}
+
+@keyframes marquee {
+  0%   { text-indent: 5em }
+  100% { text-indent: -350em }
+}
+
+// 游戏列表
+.game-lists{
+  // margin-top: 10px;
+  background-color: #fff;
+  .game-top{
+    padding: 0 10px;
+    position: relative;
+  }
+  .game-edit{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    display: none;
+  }
+  h2{
+    margin: 0;
+    line-height: 2;
+    color: $cGray;
+    font-size: 18px;
+    @include max-screen(360px) {
+      &{
+        font-size: 14px;
+      }
+    }
+    span{
+      background-color: $cGray;
+      color: $cWhite;
+      border-radius: 50%;
+      padding: 0 2px;
+      margin-right: 6px;
+    }
+  }
+  @at-root .game-content{
+    font-size: 0;
+    line-height: 0;
+    padding-left: 0;
+    list-style: none;
+    margin-bottom: 0;
+    overflow: hidden;
+    li{
+      width: 33.333333%;
+      height: 33.333333vw;
+      float: left;
+      a{
+        width: 33.333333vw;
+        height: 33.333333vw;
+        display: table-cell;
+        vertical-align: middle;
+        text-align: center;
+      }
+      img{
+        width: 80%;
+        // width: 70%;
+        // max-width: 100%;
+        vertical-align: middle;
+      }
+      &.double-size{
+        width: 66.666666%;
+        height: 66.666666vw;
+        a{
+          width: 66.666666vw;
+          height: 28vw;
+        }
+        img{
+          width: 55%;
+        }
+      }
+      @for $i from 1 through length($gameBgColors) {
+        $color: nth($gameBgColors, $i);
+        &:nth-child(#{$i}) {
+          background-color: $color;
+        }
+      }
+    }
+    .latest-balls{
+      text-align: center;
+      font-size: 4vw;
+      color: #fff;
+      line-height: 6vw;
+      p{
+        margin-bottom: 0;
+      }
+      .balls{
+        background-color: rgba(#fff, .25);
+        border-radius: 10vw;
+        padding: 2vw 4vw;
+        display: inline-block;
+        margin-top: 2vw;
+        >span{
+          width: 10vw;
+          height: 10vw;
+          display: inline-block;
+          line-height: 10vw;
+          background-color: #fff;
+          color: $cHighlight;
+          border-radius: 50%;
+          font-size: 6vw;
+        }
+      }
+      a.bet{
+        display: inline-block;
+        width: auto;
+        height: auto;
+        margin-top: 2vw;
+        background-color: #fff;
+        color: $cHighlight;
+        border-radius: 4vw;
+        font-size: 4vw;
+        padding: 1.5vw 3vw;
+      }
+    }
+  }
+}

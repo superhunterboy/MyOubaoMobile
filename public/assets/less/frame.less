@@ -1,0 +1,344 @@
+//side body CSS
+
+//div frames box css
+.g-box{ position: relative; height:auto; overflow: hidden;
+		height: 100%;
+		width: 100%;
+	>.g-l ,.g-c{ height: 100%;}
+	.g-l{
+		position: absolute;
+		background-color: @color1;
+		width: 220px;
+		left: 0;
+		top: 0;
+		  overflow-y: auto;
+		  height: 100%;
+		  display: block;
+	}
+	.g-c{
+		margin-left: 220px;
+		top: 0;
+		overflow: auto;
+		height: 100%;
+		position: relative;
+		>iframe{
+			width: 100%;
+			height: 100%;
+			border: 0;
+			position: absolute;
+			top: 0;
+			left: 0;
+			padding-top: 51px;
+		}
+	}
+}
+.g-box2{ position: relative; height:auto; overflow: hidden;
+		height: 100%;
+		width: 100%;
+	.g-t{
+		height: 51px;
+
+		.logo{
+			width: 220px;
+			float: left;
+		}
+		.heard-top{
+			margin-left: 220px;
+			position: inherit;
+			width: inherit;
+		}
+	}
+	>.g-l ,.g-c{ height: 100%;}
+	.g-l{
+		position: absolute;
+		background-color: @color1;
+		width: 220px;
+		left: 0;
+		top: 51px;
+		overflow-y: auto;
+		height: 100%;
+		display: block;
+	}
+	.g-c{
+		margin-left: 220px;
+		top: 0;
+		overflow: auto;
+		height: 100%;
+		position: relative;
+		>iframe{
+			width: 100%;
+			height: 100%;
+			border: 0;
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+	}
+}
+.heard-top{
+			background: white;
+			height: 51px;
+			width: 100%;
+			padding:7px 10px;
+			line-height: 35px;
+			border-bottom: 1px solid #ddd;
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: 10;
+			vertical-align: middle;
+			.user-box{
+
+				.u-icon{
+					width: 30px;
+					height: 30px;
+				}
+			}
+			.exit-box{
+				&:before{
+					padding: 0 5px;
+					color: #ccc;
+					content: "/\00a0";
+				}
+			}
+		}
+
+
+
+//frameset box css
+body.side-body{
+	background-color: @color1;
+}
+//logo
+	.logo{
+		position: relative;
+		background-color:@brand-primary;
+		// background-color:darken(@color1, 10%);
+		color: white;
+		font-size: @font-size-h3;
+		height: 50px;
+		padding: 10px;
+		text-align: center;
+
+		&:before{
+			content: "";
+		    border-style: solid;
+		    border-width: 9px 9px 9px 9px;
+		    border-color: transparent #fff transparent transparent;
+		    height: 0px;
+		    position: absolute;
+		    right: 0px;
+		    top: 15px;
+		    width: 0px;
+		    -webkit-transform: rotate(360deg);
+		  }
+	}
+
+.side-menu{
+	padding-top: 20px;
+}
+
+.side-li-name{
+	border-top: darken(@color1, 5%) 1px solid;
+	border-bottom: lighten(@color1, 5%) 1px solid;
+	>div.li-name{
+		position: relative;
+		padding:10px 25px;
+		cursor: pointer;
+		color:lighten(@color1, 40%);
+		transition: background-color .5s;
+		&:before{
+			color: darken(@color1, 10%);
+			content: "";
+		    border-style: solid;
+		    border-width: 3px 0 3px 3px;
+		    border-color: transparent  transparent transparent #fff;
+		    height: 0px;
+		    position: absolute;
+		    right: 10px;
+		    top: 15px;
+		    width: 0px;
+		    -webkit-transform: rotate(0deg);
+		    transition: transform .4s;
+		  }
+		&:hover{
+			background-color:darken(@color1, 10%);
+			color:lighten(@color1, 60%);
+			&:before{
+				-webkit-transform: rotate(90deg);
+			}
+		}
+		>.side-icon{
+			content: "\e250";
+			position: relative;
+			top: 1px;
+			display: inline-block;
+			font-size: 10px;
+			font-family: 'Glyphicons Halflings';
+		}
+	}
+	&.on > div.li-name{
+		// border-left:3px solid lighten(@brand-primary, 10%) ;
+		background: @brand-primary;
+		color: white;
+		&:before{
+			-webkit-transform: rotate(90deg);
+		}
+		&.left{
+			&:before{
+				right: 0px;
+			    -webkit-transform: rotate(0deg);
+			}
+
+		}
+	}
+
+}
+
+.side-li-box{
+	position: relative;
+}
+.side-box{
+	display: none;
+	width: 100%;
+	background-color: @color1;
+	.side-li{
+		background-color:darken(@color1, 5%);
+			>a{
+			padding: 8px;
+			padding-left: 45px;
+			display: block;
+			color: lighten(@color1, 20%);
+			cursor: pointer;
+			transition: background-color .5s;
+			&:hover{
+				text-decoration: none;
+				color: lighten(@color1, 40%);
+				background-color: darken(@color1, 8%);
+			}
+		}
+		&.on{
+			background: #24282D;
+			>a{
+				color: white;
+			}
+		}
+	}
+	>font{
+		padding: 15px 25px;
+		display: block;
+		line-height: 20px;
+		color:lighten(@color1, 30%);
+	}
+	&.side-box-left{
+		left:50px;
+		position:absolute;
+		z-index:1000;
+		width:180px;
+		top:0;
+		border-radius: 0px 5px 0px 0;
+		-moz-box-shadow: 2px 2px 5px #4D4D4D;
+		-webkit-box-shadow: 2px 2px 5px #4D4D4D;
+		box-shadow: 1px 0px 3px #4D4D4D;
+		.side-li{
+			border-left: 1px solid @body-bg;
+		}
+	}
+}
+
+
+.menu-btn{
+	border: 1px solid @brand-success;
+	border-radius: @border-radius-large;
+	width: 26px;
+	height: 26px;
+	line-height: 24px;
+  	text-align: center;
+	display: inline-block;
+	vertical-align: middle;
+	font-family: 'Glyphicons Halflings';
+	font-family: 'Glyphicons Halflings';
+  	font-style: normal;
+  	background-color:white ;
+	cursor: pointer;
+	color:@brand-primary;
+	transition: background-color .5s;
+
+	&:before { content: "\e236"; }
+	&:hover{color:white;background-color:lighten(@brand-primary, 30%)}
+}
+
+
+//top body CSS
+body.top-body{
+	background: #fff;
+}
+
+
+
+//tree
+.tree-bom{}
+.t-title{}
+.t-body{ padding: 10px;  height: 400px;overflow: auto;}
+
+.t-p{}
+
+.t-t{ border: 1px solid #ddd; height: 25px; line-height: 25px;background: #f5f5f5; padding: 2px 10px; border-radius:10px; margin-bottom: 3px;}
+.t-t .glyphicon{top:3px;}.t-t .glyphicon:link{ color: #ddd; }
+.t-s{ margin-left:15px; padding: 10px; border-left: 1px solid #ddd;}
+
+.t-t1{color: #fff; height: 20px; line-height: 20px;background: #428bca; display: inline-block; padding: 2px 10px; border-radius:10px; margin: 2px;}
+.t-t2{color: #000; height: 20px; line-height: 20px;background: #5bc0de; display: inline-block; padding: 2px 10px; border-radius:10px; margin:2px;}
+.t-t3{color: #000; height: 20px; line-height: 20px;background: #f0ad4e; display: inline-block; padding: 2px 5px;white-space: nowrap;vertical-align: baseline; border-radius:10px; margin:2px;}
+.listU{margin-left:15px; padding: 10px; border-left: 1px solid #ddd;}
+
+.t-label{ position: relative; display: inline-block;padding: .4em .6em;font-size: 75%;line-height: 1;color: #fff;text-align: center;white-space: nowrap;vertical-align: baseline;border-radius: .25em;margin: 2px 3px;}
+.t-label input[type="checkbox"]{ margin: 0 !important;}
+.t-label:before {content: "";border-style: solid;border-width: 11px 11px 11px 0;height: 0px;position: absolute;left: -8px;top: 0;width: 0px;-webkit-transform: rotate(360deg);}
+.label-default:before{ border-color: transparent #999 transparent transparent;}
+.label-primary:before{ border-color: transparent #428bca transparent transparent;}
+.label-success:before{ border-color: transparent #5cb85c transparent transparent;}
+.label-info:before{ border-color: transparent #5bc0de transparent transparent;}
+.label-warning:before{ border-color: transparent #f0ad4e transparent transparent;}
+.label-danger:before{ border-color: transparent #d9534f transparent transparent;}
+
+.time-top{background: #434A54; border-radius:  5px 25px 10px 0 ;text-align: center; width: 220px; color: #f2f2f2; margin-bottom: -2px;}
+
+.text-red{color: #f00;}
+.text-green{color: #449614;}
+.text-weight{ font-weight:bold;}
+
+
+/*make dome*/
+.spinnerBox{ background: #fff; width: 100%; height: 100%; top:0; left:0; opacity: 0.8; position: absolute;z-index: 100000;}
+.spinner {margin: 30% auto;width: 150px;text-align: center;}
+.spinner > div {
+  width: 30px;
+  height: 30px;
+  background-color: #3498db;
+
+  border-radius: 100%;
+  display: inline-block;
+  -webkit-animation: bouncedelay 1.4s infinite ease-in-out;
+  animation: bouncedelay 1.4s infinite ease-in-out;
+  /* Prevent first frame from flickering when animation starts */
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+.spinner .bounce1 {-webkit-animation-delay: -0.32s;animation-delay: -0.32s;}
+
+.spinner .bounce2 {-webkit-animation-delay: -0.16s;animation-delay: -0.16s;}
+
+@-webkit-keyframes bouncedelay {
+0%, 80%, 100% { -webkit-transform: scale(0.0) }
+40% { -webkit-transform: scale(1.0) }}
+
+@keyframes bouncedelay {
+  0%, 80%, 100% {
+    transform: scale(0.0);
+    -webkit-transform: scale(0.0);
+  } 40% {
+    transform: scale(1.0);
+    -webkit-transform: scale(1.0);
+  }
+}

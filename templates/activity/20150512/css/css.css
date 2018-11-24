@@ -1,0 +1,57 @@
+/* Eric Meyer's Reset CSS v2.0 - http://cssreset.com */
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{border:0;font-size:100%;font-family:"Helvetica Neue","Hiragino Sans GB","Microsoft Yahei",sans-serif,arial;vertical-align:baseline;margin:0;padding:0}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:none}table{border-collapse:collapse;border-spacing:0}
+
+.seo-txt{
+	text-indent: -9999em;
+	line-height: 0;
+	font-size: 0;
+	height: 0;
+	color: transparent;
+	opacity: 0;
+	filter: alpha(opacity=0);
+}
+
+body{
+	color: #400000;
+	background-color: #ce1c1e;
+	font-size: 12px;
+	line-height: 1.5;
+}
+
+.banner{
+	width: 100%;
+	height: 884px;
+	background: url(../images/banner.jpg) center top no-repeat;
+	position: relative;
+	z-index: 0
+}
+.content{
+	width: 1000px;
+	margin: 0 auto;
+	position: relative;
+	z-index: 2;
+	padding-top: 78px;
+}
+
+.section{
+	width: 100%;
+	position: relative;
+}
+.section_1{
+	height: 300px;
+	background: url(../images/a_1.png) no-repeat;
+}
+
+.footer{
+	width: 100%;
+	height: 140px;
+	background: url(../images/foot-bg.jpg) repeat-x;
+}
+.footer .cont{
+	width: 1000px;
+	margin: 0 auto;
+	padding-top: 80px;
+	text-align: center;
+	font-size: 12px;
+	color: #485f6a;
+}

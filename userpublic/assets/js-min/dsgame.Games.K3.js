@@ -1,0 +1,1 @@
+!function(n,e,a){var t,i={name:"k3",jsNamespace:""},s=n.Games,f={init:function(){var n=this;n.eventProxy()},getGameConfig:function(){return s.K3.Config}},m=n.Class(f,a);m.defConfig=i,m.getInstance=function(n){return t||(t=new m(n))},n.Games[e]=m}(dsgame,"K3",dsgame.Game);
